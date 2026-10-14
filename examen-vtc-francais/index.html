@@ -1,0 +1,336 @@
+<!doctype html>
+<!-- Généré par scripts/build-site.mjs depuis site-src/ : ne pas modifier ce fichier. -->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Épreuve de français de l’examen VTC : texte, QCM et corrigé</title>
+<meta name="description" content="Épreuve D de l’examen VTC : un texte de 15 à 20 lignes, 7 QCM et 3 questions courtes en 30 minutes. Exemple corrigé et règle des fautes d’orthographe.">
+<link rel="canonical" href="https://prepavtc.fr/examen-vtc-francais/">
+<link rel="icon" href="https://prepavtc.fr/icon.png">
+<link rel="apple-touch-icon" href="https://prepavtc.fr/icon.png">
+<meta name="theme-color" content="#0A1020">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Examen VTC">
+<meta property="og:title" content="Épreuve de français de l’examen VTC : texte, QCM et corrigé">
+<meta property="og:description" content="Épreuve D de l’examen VTC : un texte de 15 à 20 lignes, 7 QCM et 3 questions courtes en 30 minutes. Exemple corrigé et règle des fautes d’orthographe.">
+<meta property="og:url" content="https://prepavtc.fr/examen-vtc-francais/">
+<meta property="og:image" content="https://prepavtc.fr/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Examen VTC : QCM corrigés et examens blancs sur iPhone">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root { --bg:#0A1020; --surface:#131C2F; --surface2:#1A2540; --border:rgba(255,255,255,.08); --text:#F3F5F9; --soft:#C9D0DC; --muted:#8C96AB; --accent:#F5B301; --accent-text:#1A1300; --ok:#34D399; --ok-bg:rgba(52,211,153,.12); --bad:#F87171; --bad-bg:rgba(248,113,113,.12); --ep:#F5B301; --ep-soft:rgba(245,179,1,.16); color-scheme:dark; }
+* { box-sizing:border-box; }
+html { -webkit-text-size-adjust:100%; }
+body { margin:0; background:var(--bg); color:var(--text); font:17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+a { color:var(--accent); text-underline-offset:2px; }
+a:focus-visible, summary:focus-visible, input:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline-offset:2px; border-radius:6px; }
+img { max-width:100%; }
+.top { display:flex; align-items:center; justify-content:space-between; gap:8px; max-width:800px; margin:0 auto; padding:14px 16px; }
+.brand { display:flex; align-items:center; gap:10px; color:var(--text); text-decoration:none; font-weight:800; font-size:17px; white-space:nowrap; }
+.brand img { width:32px; height:32px; border-radius:8px; }
+.links { display:flex; gap:2px; }
+.links a { display:inline-flex; align-items:center; min-height:44px; color:var(--soft); text-decoration:none; font-weight:600; font-size:15px; padding:0 10px; border-radius:10px; }
+.links a:hover { color:var(--text); background:var(--surface); }
+main { max-width:800px; margin:0 auto; padding:8px 16px 48px; }
+h1 { font-size:34px; line-height:1.15; letter-spacing:-.5px; margin:8px 0 12px; }
+h2 { font-size:23px; line-height:1.25; margin:44px 0 12px; letter-spacing:-.2px; }
+h3 { font-size:17px; margin:0 0 4px; }
+p { margin:0 0 14px; }
+.lead { font-size:19px; color:var(--soft); }
+.kicker { display:flex; align-items:center; gap:8px; color:var(--accent); font-weight:800; letter-spacing:1.5px; font-size:13px; text-transform:uppercase; margin:0 0 4px; }
+.hero .kicker { color:var(--ep); }
+.muted, .updated { color:var(--muted); font-size:14px; }
+.updated { margin-top:32px; }
+.crumbs { display:flex; flex-wrap:wrap; gap:6px; font-size:14px; color:var(--muted); margin:4px 0 12px; }
+.crumbs a { color:var(--muted); }
+.card { background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:16px 18px; margin:10px 0; }
+.card p:last-child { margin-bottom:0; }
+ul, ol { padding-left:22px; }
+li { margin:4px 0; }
+.check { list-style:none; padding:0; }
+.check li { position:relative; padding-left:30px; margin:10px 0; }
+.check li::before { content:""; position:absolute; left:2px; top:7px; width:16px; height:9px; border-left:3px solid var(--accent); border-bottom:3px solid var(--accent); transform:rotate(-45deg); }
+.tips li { margin:8px 0; }
+/* Épreuves */
+.ep-grid { list-style:none; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:12px 0 16px; }
+.ep-grid li { margin:0; }
+.ep-card { display:flex; align-items:center; gap:12px; height:100%; background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:12px 14px; color:var(--text); text-decoration:none; }
+.ep-card:hover { border-color:var(--ep); }
+.ep-badge { flex:none; display:inline-grid; place-items:center; width:40px; height:40px; border-radius:12px; background:var(--ep-soft); color:var(--ep); font-weight:800; font-size:19px; }
+.ep-badge.sm { width:26px; height:26px; border-radius:8px; font-size:14px; letter-spacing:0; }
+.ep-body { display:flex; flex-direction:column; min-width:0; line-height:1.3; }
+.ep-meta { color:var(--muted); font-size:13.5px; margin-top:2px; }
+.ep-arrow { margin-left:auto; color:var(--muted); font-size:24px; line-height:1; }
+.facts { display:grid; grid-template-columns:repeat(4, 1fr); gap:10px; margin:20px 0 8px; }
+.facts div { background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:12px 14px; }
+.facts dt { color:var(--muted); font-size:13px; font-weight:600; }
+.facts dd { margin:2px 0 0; font-size:24px; font-weight:800; color:var(--ep); line-height:1.2; }
+.facts small { display:block; color:var(--muted); font-size:12.5px; font-weight:500; margin-top:2px; }
+.themes-title { color:var(--muted); font-size:15px; margin-bottom:6px; }
+.chips { list-style:none; padding:0; display:flex; flex-wrap:wrap; gap:6px; }
+.chips li { margin:0; background:var(--surface2); border-radius:999px; padding:4px 12px; font-size:14px; color:var(--soft); }
+/* Questions */
+.passage { background:var(--surface); border-left:4px solid var(--ep); border-radius:4px 16px 16px 4px; margin:16px 0; padding:14px 18px; }
+.passage figcaption { font-weight:800; margin-bottom:8px; }
+.passage p { color:var(--soft); }
+.quiz { list-style:none; padding:0; counter-reset:none; }
+.q { background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:16px 18px; margin:12px 0; }
+.q-kicker { color:var(--muted); font-size:13px; font-weight:600; margin-bottom:6px; }
+.q-text { font-weight:700; font-size:18px; line-height:1.4; }
+.choices { list-style:none; padding:0; margin:0 0 10px; }
+.choices li { display:flex; gap:10px; align-items:flex-start; background:var(--surface2); border-radius:12px; padding:9px 12px; margin:6px 0; }
+.choices .l { flex:none; width:22px; height:22px; display:inline-grid; place-items:center; border-radius:6px; background:rgba(255,255,255,.08); font-size:13px; font-weight:700; margin-top:2px; }
+details { border-top:1px solid var(--border); padding-top:10px; }
+summary { cursor:pointer; color:var(--accent); font-weight:700; }
+details[open] summary { margin-bottom:8px; }
+.q:has(details[open]) .choices li.ok { background:var(--ok-bg); box-shadow:inset 0 0 0 1px var(--ok); }
+.answer strong { color:var(--ok); }
+.src { color:var(--muted); font-size:14px; }
+/* Appel à l'app */
+.cta { display:flex; gap:16px; align-items:flex-start; background:linear-gradient(135deg, rgba(245,179,1,.12), rgba(245,179,1,.03)); border:1px solid rgba(245,179,1,.35); border-radius:20px; padding:18px 20px; margin:28px 0; }
+.cta-icon { flex:none; width:64px; height:64px; border-radius:15px; }
+.cta-title { font-weight:800; font-size:19px; margin-bottom:4px; line-height:1.3; }
+.cta-text { color:var(--soft); margin-bottom:12px; }
+.soon { display:inline-block; border:1px solid var(--border); background:var(--surface2); color:var(--soft); border-radius:12px; padding:8px 14px; font-weight:700; font-size:15px; }
+.store img { display:block; height:50px; width:auto; }
+/* Calculateur */
+.calc { background:var(--surface); border:1px solid var(--border); border-radius:20px; padding:8px 18px 18px; margin:20px 0; }
+.calc-row { display:grid; grid-template-columns:auto 1fr 96px; gap:12px; align-items:center; padding:10px 0; border-bottom:1px solid var(--border); }
+.calc-row label { display:flex; flex-direction:column; line-height:1.3; font-weight:700; }
+.calc-row label span { color:var(--muted); font-size:13.5px; font-weight:500; }
+.calc-row input { width:100%; font:inherit; font-size:20px; font-weight:700; text-align:center; color:var(--text); background:var(--bg); border:1px solid rgba(255,255,255,.42); border-radius:12px; padding:8px 6px; }
+.calc-row input[aria-invalid="true"] { border-color:var(--bad); }
+.calc-row.elim input { border-color:var(--bad); color:var(--bad); }
+.calc-actions { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top:14px; flex-wrap:wrap; }
+.btn { font:inherit; font-weight:700; font-size:15px; border-radius:12px; padding:9px 14px; cursor:pointer; border:1px solid var(--border); background:var(--surface2); color:var(--text); }
+.result { border-radius:18px; padding:16px 18px; margin-top:16px; background:var(--surface2); }
+.result.ok { background:var(--ok-bg); box-shadow:inset 0 0 0 1px var(--ok); }
+.result.bad { background:var(--bad-bg); box-shadow:inset 0 0 0 1px var(--bad); }
+.result-avg { font-size:36px; font-weight:800; line-height:1.1; margin:0 0 4px; }
+.result-avg small { font-size:18px; color:var(--muted); font-weight:700; }
+.result-verdict { font-weight:800; font-size:19px; margin:0 0 6px; }
+.result.ok .result-verdict { color:var(--ok); }
+.result.bad .result-verdict { color:var(--bad); }
+.result ul { margin:6px 0 0; }
+table { width:100%; border-collapse:collapse; margin:12px 0 16px; font-size:16px; }
+th, td { text-align:left; padding:9px 10px; border-bottom:1px solid var(--border); vertical-align:top; }
+th { color:var(--muted); font-size:13.5px; font-weight:700; }
+td.n, th.n { text-align:right; white-space:nowrap; }
+.table-wrap { overflow-x:auto; }
+/* Dates */
+table.next td:first-child { white-space:nowrap; font-weight:700; }
+table.next td a { text-decoration:none; }
+table.next td a:hover { text-decoration:underline; }
+.region h3 { font-size:18px; margin-bottom:8px; }
+.sessions { list-style:none; padding:0; margin:0 0 10px; }
+.sessions li { display:flex; flex-wrap:wrap; column-gap:12px; row-gap:2px; align-items:baseline; padding:8px 0; border-bottom:1px solid var(--border); margin:0; }
+.sessions li:last-child { border-bottom:0; }
+.sessions time { font-weight:700; min-width:205px; }
+.dl { color:var(--ok); font-size:15px; }
+.dl.closed { color:var(--muted); text-decoration:line-through; }
+.note { flex-basis:100%; color:var(--muted); font-size:13.5px; }
+.region .src { margin:0; }
+.national-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.national { padding-left:0; list-style:none; margin:0; }
+.national li { padding:3px 0; }
+.national li.past { color:var(--muted); text-decoration:line-through; }
+/* Pied de page */
+.foot { border-top:1px solid var(--border); max-width:800px; margin:0 auto; padding:28px 16px 40px; }
+.foot-cols { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.foot-title { font-weight:800; font-size:14px; letter-spacing:1px; text-transform:uppercase; color:var(--muted); margin:0 0 6px; }
+.foot ul { list-style:none; padding:0; margin:0 0 16px; }
+.foot li { margin:3px 0; }
+.foot a { color:var(--soft); text-decoration:none; font-size:15px; }
+.foot a:hover { color:var(--text); text-decoration:underline; }
+@media (max-width:640px) {
+  body { font-size:16.5px; }
+  h1 { font-size:28px; }
+  h2 { font-size:21px; margin-top:36px; }
+  .lead { font-size:17.5px; }
+  .ep-grid { grid-template-columns:1fr; }
+  .facts { grid-template-columns:1fr 1fr; }
+  .cta { flex-direction:column; gap:12px; }
+  .cta-icon { width:52px; height:52px; border-radius:12px; }
+  .foot-cols { grid-template-columns:1fr; gap:0; }
+  .calc { padding:4px 14px 14px; }
+  .calc-row { grid-template-columns:auto 1fr 84px; gap:10px; }
+  .national-grid { grid-template-columns:1fr; }
+  table.next thead { display:none; }
+  table.next tr { display:block; padding:10px 0; border-bottom:1px solid var(--border); }
+  table.next td { display:block; border:0; padding:2px 0; }
+  .sessions time { min-width:0; }
+}
+@media (max-width:400px) {
+  .top { padding:12px 12px; }
+  .brand span { font-size:16px; }
+  .links a { font-size:14px; padding:0 7px; }
+}
+@media (max-width:350px) { .brand span { display:none; } }
+@media (prefers-reduced-motion:no-preference) { html { scroll-behavior:smooth; } }
+.skip { position:absolute; left:-9999px; top:8px; z-index:10; background:var(--accent); color:var(--accent-text); font-weight:800; padding:10px 14px; border-radius:10px; }
+.skip:focus { left:16px; }
+@media (max-width:640px) { .hide-sm { display:none; } }
+[hidden] { display:none !important; }
+.tag { display:inline-block; vertical-align:middle; margin-left:6px; font-size:12px; font-weight:700; color:var(--muted); border:1px solid var(--border); border-radius:999px; padding:1px 8px; }
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://prepavtc.fr/"},{"@type":"ListItem","position":2,"name":"Épreuve D : Français","item":"https://prepavtc.fr/examen-vtc-francais/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Combien de temps dure l’épreuve D de l’examen VTC ?","acceptedAnswer":{"@type":"Answer","text":"30 minutes, pour 10 questions : 7 QCM à 2 points et 3 questions à réponse courte à 2 points, soit 20 points."}},{"@type":"Question","name":"Quel est le coefficient de l’épreuve D ?","acceptedAnswer":{"@type":"Answer","text":"2, sur un total de 17 pour les 7 épreuves d’admissibilité : elle compte pour 11,8 % de la moyenne."}},{"@type":"Question","name":"Quelle est la note éliminatoire de l’épreuve D ?","acceptedAnswer":{"@type":"Answer","text":"Il faut au moins 6/20. En dessous, le candidat n’est pas admissible, même avec une moyenne générale de 10/20 ou plus (arrêté du 6 avril 2017, article 2)."}},{"@type":"Question","name":"De quoi parle le texte de l’épreuve de français ?","acceptedAnswer":{"@type":"Answer","text":"L’arrêté prévoit un texte de quinze à vingt lignes « en lien notamment avec le thème des transports ». Les textes de l’app portent sur la ville et ses nouvelles mobilités, le service au client et l’accueil de tous les passagers."}}]}</script>
+<!-- Mesure d'audience sans cookie (Cloudflare Web Analytics) -->
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "fb85774b29c14a7380457adee517406a"}'></script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="top">
+  <a class="brand" href="../"><img src="../icon.png" alt="" width="32" height="32"><span>Examen VTC</span></a>
+  <nav class="links" aria-label="Menu">
+    <a href="../#epreuves">Épreuves</a>
+    <a href="../calcul-moyenne-examen-vtc/">Calcul</a>
+    <a href="../dates-examen-vtc/">Dates</a>
+  </nav>
+</header>
+<main id="contenu">
+<nav class="crumbs" aria-label="Fil d'Ariane"><a href="../">Accueil</a><span aria-hidden="true">›</span><span aria-current="page">Épreuve D : Français</span></nav>
+<div style="--ep:#A78BFA;--ep-soft:rgba(167,139,250,.16)">
+<div class="hero">
+  <p class="kicker"><span class="ep-badge sm">D</span> Épreuve D · commune taxi et VTC</p>
+  <h1>Épreuve de français (D) de l’examen VTC : exemple corrigé</h1>
+  <p class="lead">L’épreuve D vérifie votre compréhension d’un texte de quinze à vingt lignes, en lien notamment avec le thème des transports. 30 minutes, coefficient 2.</p>
+</div>
+
+<dl class="facts">
+  <div><dt>Durée</dt><dd>30 min</dd></div>
+  <div><dt>Coefficient</dt><dd>2<small>11,8 % de la moyenne</small></dd></div>
+  <div><dt>Note minimale</dt><dd>6/20<small>en dessous : éliminatoire</small></dd></div>
+  <div><dt>Questions</dt><dd>10<small>7 QCM + 3 réponses courtes</small></dd></div>
+</dl>
+
+<h2>Ce que couvre l’épreuve D</h2>
+<p>L’épreuve évalue la capacité d’expression et de compréhension en langue française (arrêté du 6 avril 2017, article 2). Sur le texte : 7 QCM à 2 points et 3 questions à réponse courte à 2 points.</p><p>L’orthographe compte : « un point est retiré lorsque le candidat a commis plus de cinq fautes d’orthographe » dans l’ensemble de ses réponses aux questions à réponse courte.</p>
+<p class="themes-title">Thèmes travaillés dans l’app :</p>
+<ul class="chips"><li>Compréhension</li><li>Vocabulaire</li><li>Type de texte</li><li>Grammaire</li></ul>
+
+<h2 id="questions">5 questions corrigées de l’épreuve D</h2>
+<p>Tirées des questions gratuites de l’app. À l’examen, la consigne est de sélectionner « la ou les bonne(s) réponse(s) » (sujet officiel des CMA) : un QCM peut avoir plusieurs bonnes réponses, sans que leur nombre soit annoncé.</p>
+<figure class="passage"><figcaption>Texte : La ville et ses nouvelles mobilités</figcaption><p>Depuis une dizaine d’années, la façon de se déplacer en ville a profondément changé. Aux côtés des bus, des métros et des taxis, de nombreux services de transport à la demande sont apparus. Grâce aux applications mobiles, un client peut aujourd’hui réserver une voiture avec chauffeur en quelques secondes, connaître le prix à l’avance et suivre l’arrivée du véhicule en temps réel.</p><p>Cette évolution présente des avantages évidents : les usagers gagnent en confort et en simplicité, et de nombreux chauffeurs ont pu créer leur propre activité. Cependant, elle soulève aussi des questions. Les villes doivent gérer une circulation plus dense et des émissions polluantes plus importantes. C’est pourquoi de nombreuses métropoles encouragent désormais l’usage de véhicules hybrides ou électriques, et réservent certaines voies aux véhicules les moins polluants.</p><p>Pour les professionnels du transport, l’enjeu est double : proposer un service de qualité tout en s’adaptant aux nouvelles règles environnementales. Ceux qui sauront anticiper ces changements, par exemple en renouvelant leur véhicule à temps ou en se formant à l’éco-conduite, auront un avantage certain sur leurs concurrents.</p></figure>
+<ol class="quiz">
+<li class="q">
+  <p class="q-kicker">Question 1 · QCM · Compréhension</p>
+  <p class="q-text">Quel est le thème principal du texte ?</p>
+  <ol class="choices"><li><span class="l">a</span>L’histoire du métro dans les grandes villes</li><li class="ok"><span class="l">b</span>L’évolution des déplacements en ville et ses conséquences</li><li><span class="l">c</span>Les règles de la conduite sur autoroute</li><li><span class="l">d</span>Le prix des voitures électriques</li></ol>
+  <details><summary>Voir la correction</summary>
+    <p class="answer">Bonne réponse : <strong>b) L’évolution des déplacements en ville et ses conséquences</strong></p>
+    <p>Le texte décrit les nouveaux services de transport à la demande, leurs avantages et les questions qu’ils posent (circulation, pollution).</p>
+    
+  </details>
+</li>
+<li class="q">
+  <p class="q-kicker">Question 2 · QCM · Compréhension</p>
+  <p class="q-text">Selon le texte, que permettent les applications mobiles ?</p>
+  <ol class="choices"><li><span class="l">a</span>De conduire sans permis</li><li class="ok"><span class="l">b</span>De réserver rapidement une voiture et de connaître le prix à l’avance</li><li><span class="l">c</span>D’obtenir des réductions sur le carburant</li><li><span class="l">d</span>De choisir l’itinéraire du chauffeur</li></ol>
+  <details><summary>Voir la correction</summary>
+    <p class="answer">Bonne réponse : <strong>b) De réserver rapidement une voiture et de connaître le prix à l’avance</strong></p>
+    <p>Le texte cite : réserver en quelques secondes, connaître le prix à l’avance et suivre l’arrivée du véhicule en temps réel.</p>
+    
+  </details>
+</li>
+<li class="q">
+  <p class="q-kicker">Question 3 · QCM · Vocabulaire</p>
+  <p class="q-text">Dans le texte, le mot « Cependant » exprime :</p>
+  <ol class="choices"><li><span class="l">a</span>Une cause</li><li><span class="l">b</span>Une conséquence</li><li class="ok"><span class="l">c</span>Une opposition</li><li><span class="l">d</span>Un exemple</li></ol>
+  <details><summary>Voir la correction</summary>
+    <p class="answer">Bonne réponse : <strong>c) Une opposition</strong></p>
+    <p>« Cependant » introduit une idée qui s’oppose à la précédente (avantages / questions soulevées). Synonymes : pourtant, toutefois, néanmoins.</p>
+    
+  </details>
+</li>
+<li class="q">
+  <p class="q-kicker">Question 4 · QCM · Vocabulaire</p>
+  <p class="q-text">Quel est le synonyme le plus proche du verbe « anticiper » dans le texte ?</p>
+  <ol class="choices"><li><span class="l">a</span>Oublier</li><li class="ok"><span class="l">b</span>Prévoir</li><li><span class="l">c</span>Refuser</li><li><span class="l">d</span>Ralentir</li></ol>
+  <details><summary>Voir la correction</summary>
+    <p class="answer">Bonne réponse : <strong>b) Prévoir</strong></p>
+    <p>Anticiper, c’est prévoir un événement et s’y préparer avant qu’il arrive.</p>
+    
+  </details>
+</li>
+<li class="q">
+  <p class="q-kicker">Question 5 · Réponse courte · Compréhension</p>
+  <p class="q-text">Citez deux avantages de l’évolution des transports mentionnés dans le texte.</p>
+  <details><summary>Voir la réponse attendue</summary>
+    <p class="answer"><strong>Les usagers gagnent en confort et en simplicité ; de nombreux chauffeurs ont pu créer leur propre activité. (On peut aussi citer : réserver vite, connaître le prix à l’avance.)</strong></p>
+    <p>Répondez par une phrase complète, sans recopier tout le paragraphe. Attention : au-delà de 5 fautes d’orthographe dans les QRC, 1 point est retiré.</p>
+    
+  </details>
+</li>
+</ol>
+
+<aside class="cta">
+  <img class="cta-icon" src="../icon.png" alt="" width="64" height="64">
+  <div>
+    <p class="cta-title">Les 31 questions de l’épreuve D dans l’app</p>
+    <p class="cta-text">Dont 15 gratuites, chacune avec sa correction expliquée, et des examens blancs au format officiel : durées, barème et notes éliminatoires.</p>
+    <span class="soon">Bientôt sur l’App Store · iPhone</span>
+  </div>
+</aside>
+
+<h2>Conseils pour l’épreuve D</h2>
+<ul class="tips"><li>Les QCM valent 2 points chacun, soit 14 des 20 points : une erreur coûte autant qu’une question courte ratée.</li><li>Répondez aux questions courtes par une phrase complète, avec vos mots, et relisez l’orthographe : au-delà de cinq fautes sur l’ensemble de vos réponses courtes, un point est retiré.</li><li>Révisez les mots de liaison (cependant, donc, car, ainsi) : ils indiquent si une idée s’oppose à la précédente, s’y ajoute ou en découle.</li></ul>
+
+<h2>Les autres épreuves</h2>
+<ul class="ep-grid">
+  <li><a class="ep-card" href="../qcm-reglementation-t3p/" style="--ep:#F5B301;--ep-soft:rgba(245,179,1,.16)">
+    <span class="ep-badge">A</span>
+    <span class="ep-body"><strong>Réglementation T3P</strong><span class="ep-meta">45 min · coef. 3 · 6/20 minimum</span></span>
+    <span class="ep-arrow" aria-hidden="true">›</span>
+  </a></li>
+  <li><a class="ep-card" href="../qcm-gestion-vtc/" style="--ep:#2DD4BF;--ep-soft:rgba(45,212,191,.16)">
+    <span class="ep-badge">B</span>
+    <span class="ep-body"><strong>Gestion</strong><span class="ep-meta">45 min · coef. 2 · 6/20 minimum</span></span>
+    <span class="ep-arrow" aria-hidden="true">›</span>
+  </a></li>
+  <li><a class="ep-card" href="../qcm-securite-routiere-vtc/" style="--ep:#FB923C;--ep-soft:rgba(251,146,60,.16)">
+    <span class="ep-badge">C</span>
+    <span class="ep-body"><strong>Sécurité routière</strong><span class="ep-meta">30 min · coef. 3 · 6/20 minimum</span></span>
+    <span class="ep-arrow" aria-hidden="true">›</span>
+  </a></li>
+  <li><a class="ep-card" href="../examen-vtc-anglais-qcm/" style="--ep:#60A5FA;--ep-soft:rgba(96,165,250,.16)">
+    <span class="ep-badge">E</span>
+    <span class="ep-body"><strong>Anglais</strong><span class="ep-meta">30 min · coef. 1 · 4/20 minimum</span></span>
+    <span class="ep-arrow" aria-hidden="true">›</span>
+  </a></li>
+  <li><a class="ep-card" href="../qcm-developpement-commercial-vtc/" style="--ep:#34D399;--ep-soft:rgba(52,211,153,.16)">
+    <span class="ep-badge">F</span>
+    <span class="ep-body"><strong>Développement commercial</strong><span class="ep-meta">30 min · coef. 3 · 6/20 minimum</span></span>
+    <span class="ep-arrow" aria-hidden="true">›</span>
+  </a></li>
+  <li><a class="ep-card" href="../qcm-reglementation-vtc/" style="--ep:#F472B6;--ep-soft:rgba(244,114,182,.16)">
+    <span class="ep-badge">G</span>
+    <span class="ep-body"><strong>Réglementation VTC</strong><span class="ep-meta">20 min · coef. 3 · 6/20 minimum</span></span>
+    <span class="ep-arrow" aria-hidden="true">›</span>
+  </a></li>
+</ul>
+<p>Toutes les épreuves comptent ensemble : vérifiez votre moyenne avec le <a href="../calcul-moyenne-examen-vtc/">calcul de la moyenne</a> et choisissez votre session dans les <a href="../dates-examen-vtc/">dates de l’examen</a>.</p>
+</div>
+<section class="faq">
+  <h2>Questions fréquentes</h2>
+  <div class="card"><h3>Combien de temps dure l’épreuve D de l’examen VTC ?</h3><p>30 minutes, pour 10 questions : 7 QCM à 2 points et 3 questions à réponse courte à 2 points, soit 20 points.</p></div>
+  <div class="card"><h3>Quel est le coefficient de l’épreuve D ?</h3><p>2, sur un total de 17 pour les 7 épreuves d’admissibilité : elle compte pour 11,8 % de la moyenne.</p></div>
+  <div class="card"><h3>Quelle est la note éliminatoire de l’épreuve D ?</h3><p>Il faut au moins 6/20. En dessous, le candidat n’est pas admissible, même avec une moyenne générale de 10/20 ou plus (arrêté du 6 avril 2017, article 2).</p></div>
+  <div class="card"><h3>De quoi parle le texte de l’épreuve de français ?</h3><p>L’arrêté prévoit un texte de quinze à vingt lignes « en lien notamment avec le thème des transports ». Les textes de l’app portent sur la ville et ses nouvelles mobilités, le service au client et l’accueil de tous les passagers.</p></div>
+</section>
+<p class="updated">Mis à jour le 14 octobre 2026</p>
+</main>
+<footer class="foot">
+  <div class="foot-cols">
+    <div><p class="foot-title">QCM par épreuve</p><ul><li><a href="../qcm-reglementation-t3p/">QCM Réglementation T3P</a></li><li><a href="../qcm-gestion-vtc/">QCM Gestion</a></li><li><a href="../qcm-securite-routiere-vtc/">QCM Sécurité routière</a></li><li><a href="../examen-vtc-francais/">QCM Français</a></li><li><a href="../examen-vtc-anglais-qcm/">QCM Anglais</a></li><li><a href="../qcm-developpement-commercial-vtc/">QCM Développement commercial</a></li><li><a href="../qcm-reglementation-vtc/">QCM Réglementation VTC</a></li></ul></div>
+    <div><p class="foot-title">Outils</p><ul><li><a href="../calcul-moyenne-examen-vtc/">Calcul de la moyenne</a></li><li><a href="../dates-examen-vtc/">Dates de l’examen</a></li></ul>
+      <p class="foot-title">L’app</p><ul><li><a href="../#aide">Aide et contact</a></li><li><a href="../confidentialite.html">Confidentialité</a></li><li><a href="../mentions-legales.html">Mentions légales</a></li></ul></div>
+  </div>
+  <p class="muted">Application indépendante, non affiliée aux chambres de métiers et de l’artisanat (CMA) ni à l’administration. En cas de doute, la réglementation officielle fait foi.</p>
+</footer>
+</body>
+</html>

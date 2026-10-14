@@ -1,0 +1,373 @@
+<!doctype html>
+<!-- Généré par scripts/build-site.mjs depuis site-src/ : ne pas modifier ce fichier. -->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calcul de la moyenne à l’examen VTC : suis-je admissible ?</title>
+<meta name="description" content="Calculez votre moyenne à l’examen VTC avec les coefficients officiels et vérifiez les notes éliminatoires (6/20, 4/20 en anglais). Gratuit et sans compte.">
+<link rel="canonical" href="https://prepavtc.fr/calcul-moyenne-examen-vtc/">
+<link rel="icon" href="https://prepavtc.fr/icon.png">
+<link rel="apple-touch-icon" href="https://prepavtc.fr/icon.png">
+<meta name="theme-color" content="#0A1020">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Examen VTC">
+<meta property="og:title" content="Calcul de la moyenne à l’examen VTC : suis-je admissible ?">
+<meta property="og:description" content="Calculez votre moyenne à l’examen VTC avec les coefficients officiels et vérifiez les notes éliminatoires (6/20, 4/20 en anglais). Gratuit et sans compte.">
+<meta property="og:url" content="https://prepavtc.fr/calcul-moyenne-examen-vtc/">
+<meta property="og:image" content="https://prepavtc.fr/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Examen VTC : QCM corrigés et examens blancs sur iPhone">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root { --bg:#0A1020; --surface:#131C2F; --surface2:#1A2540; --border:rgba(255,255,255,.08); --text:#F3F5F9; --soft:#C9D0DC; --muted:#8C96AB; --accent:#F5B301; --accent-text:#1A1300; --ok:#34D399; --ok-bg:rgba(52,211,153,.12); --bad:#F87171; --bad-bg:rgba(248,113,113,.12); --ep:#F5B301; --ep-soft:rgba(245,179,1,.16); color-scheme:dark; }
+* { box-sizing:border-box; }
+html { -webkit-text-size-adjust:100%; }
+body { margin:0; background:var(--bg); color:var(--text); font:17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+a { color:var(--accent); text-underline-offset:2px; }
+a:focus-visible, summary:focus-visible, input:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline-offset:2px; border-radius:6px; }
+img { max-width:100%; }
+.top { display:flex; align-items:center; justify-content:space-between; gap:8px; max-width:800px; margin:0 auto; padding:14px 16px; }
+.brand { display:flex; align-items:center; gap:10px; color:var(--text); text-decoration:none; font-weight:800; font-size:17px; white-space:nowrap; }
+.brand img { width:32px; height:32px; border-radius:8px; }
+.links { display:flex; gap:2px; }
+.links a { display:inline-flex; align-items:center; min-height:44px; color:var(--soft); text-decoration:none; font-weight:600; font-size:15px; padding:0 10px; border-radius:10px; }
+.links a:hover { color:var(--text); background:var(--surface); }
+main { max-width:800px; margin:0 auto; padding:8px 16px 48px; }
+h1 { font-size:34px; line-height:1.15; letter-spacing:-.5px; margin:8px 0 12px; }
+h2 { font-size:23px; line-height:1.25; margin:44px 0 12px; letter-spacing:-.2px; }
+h3 { font-size:17px; margin:0 0 4px; }
+p { margin:0 0 14px; }
+.lead { font-size:19px; color:var(--soft); }
+.kicker { display:flex; align-items:center; gap:8px; color:var(--accent); font-weight:800; letter-spacing:1.5px; font-size:13px; text-transform:uppercase; margin:0 0 4px; }
+.hero .kicker { color:var(--ep); }
+.muted, .updated { color:var(--muted); font-size:14px; }
+.updated { margin-top:32px; }
+.crumbs { display:flex; flex-wrap:wrap; gap:6px; font-size:14px; color:var(--muted); margin:4px 0 12px; }
+.crumbs a { color:var(--muted); }
+.card { background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:16px 18px; margin:10px 0; }
+.card p:last-child { margin-bottom:0; }
+ul, ol { padding-left:22px; }
+li { margin:4px 0; }
+.check { list-style:none; padding:0; }
+.check li { position:relative; padding-left:30px; margin:10px 0; }
+.check li::before { content:""; position:absolute; left:2px; top:7px; width:16px; height:9px; border-left:3px solid var(--accent); border-bottom:3px solid var(--accent); transform:rotate(-45deg); }
+.tips li { margin:8px 0; }
+/* Épreuves */
+.ep-grid { list-style:none; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:12px 0 16px; }
+.ep-grid li { margin:0; }
+.ep-card { display:flex; align-items:center; gap:12px; height:100%; background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:12px 14px; color:var(--text); text-decoration:none; }
+.ep-card:hover { border-color:var(--ep); }
+.ep-badge { flex:none; display:inline-grid; place-items:center; width:40px; height:40px; border-radius:12px; background:var(--ep-soft); color:var(--ep); font-weight:800; font-size:19px; }
+.ep-badge.sm { width:26px; height:26px; border-radius:8px; font-size:14px; letter-spacing:0; }
+.ep-body { display:flex; flex-direction:column; min-width:0; line-height:1.3; }
+.ep-meta { color:var(--muted); font-size:13.5px; margin-top:2px; }
+.ep-arrow { margin-left:auto; color:var(--muted); font-size:24px; line-height:1; }
+.facts { display:grid; grid-template-columns:repeat(4, 1fr); gap:10px; margin:20px 0 8px; }
+.facts div { background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:12px 14px; }
+.facts dt { color:var(--muted); font-size:13px; font-weight:600; }
+.facts dd { margin:2px 0 0; font-size:24px; font-weight:800; color:var(--ep); line-height:1.2; }
+.facts small { display:block; color:var(--muted); font-size:12.5px; font-weight:500; margin-top:2px; }
+.themes-title { color:var(--muted); font-size:15px; margin-bottom:6px; }
+.chips { list-style:none; padding:0; display:flex; flex-wrap:wrap; gap:6px; }
+.chips li { margin:0; background:var(--surface2); border-radius:999px; padding:4px 12px; font-size:14px; color:var(--soft); }
+/* Questions */
+.passage { background:var(--surface); border-left:4px solid var(--ep); border-radius:4px 16px 16px 4px; margin:16px 0; padding:14px 18px; }
+.passage figcaption { font-weight:800; margin-bottom:8px; }
+.passage p { color:var(--soft); }
+.quiz { list-style:none; padding:0; counter-reset:none; }
+.q { background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:16px 18px; margin:12px 0; }
+.q-kicker { color:var(--muted); font-size:13px; font-weight:600; margin-bottom:6px; }
+.q-text { font-weight:700; font-size:18px; line-height:1.4; }
+.choices { list-style:none; padding:0; margin:0 0 10px; }
+.choices li { display:flex; gap:10px; align-items:flex-start; background:var(--surface2); border-radius:12px; padding:9px 12px; margin:6px 0; }
+.choices .l { flex:none; width:22px; height:22px; display:inline-grid; place-items:center; border-radius:6px; background:rgba(255,255,255,.08); font-size:13px; font-weight:700; margin-top:2px; }
+details { border-top:1px solid var(--border); padding-top:10px; }
+summary { cursor:pointer; color:var(--accent); font-weight:700; }
+details[open] summary { margin-bottom:8px; }
+.q:has(details[open]) .choices li.ok { background:var(--ok-bg); box-shadow:inset 0 0 0 1px var(--ok); }
+.answer strong { color:var(--ok); }
+.src { color:var(--muted); font-size:14px; }
+/* Appel à l'app */
+.cta { display:flex; gap:16px; align-items:flex-start; background:linear-gradient(135deg, rgba(245,179,1,.12), rgba(245,179,1,.03)); border:1px solid rgba(245,179,1,.35); border-radius:20px; padding:18px 20px; margin:28px 0; }
+.cta-icon { flex:none; width:64px; height:64px; border-radius:15px; }
+.cta-title { font-weight:800; font-size:19px; margin-bottom:4px; line-height:1.3; }
+.cta-text { color:var(--soft); margin-bottom:12px; }
+.soon { display:inline-block; border:1px solid var(--border); background:var(--surface2); color:var(--soft); border-radius:12px; padding:8px 14px; font-weight:700; font-size:15px; }
+.store img { display:block; height:50px; width:auto; }
+/* Calculateur */
+.calc { background:var(--surface); border:1px solid var(--border); border-radius:20px; padding:8px 18px 18px; margin:20px 0; }
+.calc-row { display:grid; grid-template-columns:auto 1fr 96px; gap:12px; align-items:center; padding:10px 0; border-bottom:1px solid var(--border); }
+.calc-row label { display:flex; flex-direction:column; line-height:1.3; font-weight:700; }
+.calc-row label span { color:var(--muted); font-size:13.5px; font-weight:500; }
+.calc-row input { width:100%; font:inherit; font-size:20px; font-weight:700; text-align:center; color:var(--text); background:var(--bg); border:1px solid rgba(255,255,255,.42); border-radius:12px; padding:8px 6px; }
+.calc-row input[aria-invalid="true"] { border-color:var(--bad); }
+.calc-row.elim input { border-color:var(--bad); color:var(--bad); }
+.calc-actions { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top:14px; flex-wrap:wrap; }
+.btn { font:inherit; font-weight:700; font-size:15px; border-radius:12px; padding:9px 14px; cursor:pointer; border:1px solid var(--border); background:var(--surface2); color:var(--text); }
+.result { border-radius:18px; padding:16px 18px; margin-top:16px; background:var(--surface2); }
+.result.ok { background:var(--ok-bg); box-shadow:inset 0 0 0 1px var(--ok); }
+.result.bad { background:var(--bad-bg); box-shadow:inset 0 0 0 1px var(--bad); }
+.result-avg { font-size:36px; font-weight:800; line-height:1.1; margin:0 0 4px; }
+.result-avg small { font-size:18px; color:var(--muted); font-weight:700; }
+.result-verdict { font-weight:800; font-size:19px; margin:0 0 6px; }
+.result.ok .result-verdict { color:var(--ok); }
+.result.bad .result-verdict { color:var(--bad); }
+.result ul { margin:6px 0 0; }
+table { width:100%; border-collapse:collapse; margin:12px 0 16px; font-size:16px; }
+th, td { text-align:left; padding:9px 10px; border-bottom:1px solid var(--border); vertical-align:top; }
+th { color:var(--muted); font-size:13.5px; font-weight:700; }
+td.n, th.n { text-align:right; white-space:nowrap; }
+.table-wrap { overflow-x:auto; }
+/* Dates */
+table.next td:first-child { white-space:nowrap; font-weight:700; }
+table.next td a { text-decoration:none; }
+table.next td a:hover { text-decoration:underline; }
+.region h3 { font-size:18px; margin-bottom:8px; }
+.sessions { list-style:none; padding:0; margin:0 0 10px; }
+.sessions li { display:flex; flex-wrap:wrap; column-gap:12px; row-gap:2px; align-items:baseline; padding:8px 0; border-bottom:1px solid var(--border); margin:0; }
+.sessions li:last-child { border-bottom:0; }
+.sessions time { font-weight:700; min-width:205px; }
+.dl { color:var(--ok); font-size:15px; }
+.dl.closed { color:var(--muted); text-decoration:line-through; }
+.note { flex-basis:100%; color:var(--muted); font-size:13.5px; }
+.region .src { margin:0; }
+.national-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.national { padding-left:0; list-style:none; margin:0; }
+.national li { padding:3px 0; }
+.national li.past { color:var(--muted); text-decoration:line-through; }
+/* Pied de page */
+.foot { border-top:1px solid var(--border); max-width:800px; margin:0 auto; padding:28px 16px 40px; }
+.foot-cols { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.foot-title { font-weight:800; font-size:14px; letter-spacing:1px; text-transform:uppercase; color:var(--muted); margin:0 0 6px; }
+.foot ul { list-style:none; padding:0; margin:0 0 16px; }
+.foot li { margin:3px 0; }
+.foot a { color:var(--soft); text-decoration:none; font-size:15px; }
+.foot a:hover { color:var(--text); text-decoration:underline; }
+@media (max-width:640px) {
+  body { font-size:16.5px; }
+  h1 { font-size:28px; }
+  h2 { font-size:21px; margin-top:36px; }
+  .lead { font-size:17.5px; }
+  .ep-grid { grid-template-columns:1fr; }
+  .facts { grid-template-columns:1fr 1fr; }
+  .cta { flex-direction:column; gap:12px; }
+  .cta-icon { width:52px; height:52px; border-radius:12px; }
+  .foot-cols { grid-template-columns:1fr; gap:0; }
+  .calc { padding:4px 14px 14px; }
+  .calc-row { grid-template-columns:auto 1fr 84px; gap:10px; }
+  .national-grid { grid-template-columns:1fr; }
+  table.next thead { display:none; }
+  table.next tr { display:block; padding:10px 0; border-bottom:1px solid var(--border); }
+  table.next td { display:block; border:0; padding:2px 0; }
+  .sessions time { min-width:0; }
+}
+@media (max-width:400px) {
+  .top { padding:12px 12px; }
+  .brand span { font-size:16px; }
+  .links a { font-size:14px; padding:0 7px; }
+}
+@media (max-width:350px) { .brand span { display:none; } }
+@media (prefers-reduced-motion:no-preference) { html { scroll-behavior:smooth; } }
+.skip { position:absolute; left:-9999px; top:8px; z-index:10; background:var(--accent); color:var(--accent-text); font-weight:800; padding:10px 14px; border-radius:10px; }
+.skip:focus { left:16px; }
+@media (max-width:640px) { .hide-sm { display:none; } }
+[hidden] { display:none !important; }
+.tag { display:inline-block; vertical-align:middle; margin-left:6px; font-size:12px; font-weight:700; color:var(--muted); border:1px solid var(--border); border-radius:999px; padding:1px 8px; }
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://prepavtc.fr/"},{"@type":"ListItem","position":2,"name":"Calcul de la moyenne","item":"https://prepavtc.fr/calcul-moyenne-examen-vtc/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Quelle moyenne faut-il pour être admissible à l’examen VTC ?","acceptedAnswer":{"@type":"Answer","text":"Au moins 10/20 de moyenne sur les 7 épreuves écrites, calculée avec les coefficients (total de 17), et aucune note éliminatoire (arrêté du 6 avril 2017, article 2)."}},{"@type":"Question","name":"Quelles sont les notes éliminatoires de l’examen VTC ?","acceptedAnswer":{"@type":"Answer","text":"Une note inférieure à 6/20 aux épreuves A, B, C, D, F ou G, ou inférieure à 4/20 à l’épreuve E (anglais)."}},{"@type":"Question","name":"Une bonne moyenne compense-t-elle une note éliminatoire ?","acceptedAnswer":{"@type":"Answer","text":"Non. Avec une seule note éliminatoire, le candidat n’est pas admissible, même avec plus de 10/20 de moyenne."}},{"@type":"Question","name":"Mes notes sont-elles enregistrées ?","acceptedAnswer":{"@type":"Answer","text":"Non. Le calcul se fait dans votre navigateur : les notes ne sont ni envoyées ni conservées."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Calcul de la moyenne à l'examen VTC","url":"https://prepavtc.fr/calcul-moyenne-examen-vtc/","applicationCategory":"EducationalApplication","operatingSystem":"Any","inLanguage":"fr-FR","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}}</script>
+<!-- Mesure d'audience sans cookie (Cloudflare Web Analytics) -->
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "fb85774b29c14a7380457adee517406a"}'></script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="top">
+  <a class="brand" href="../"><img src="../icon.png" alt="" width="32" height="32"><span>Examen VTC</span></a>
+  <nav class="links" aria-label="Menu">
+    <a href="../#epreuves">Épreuves</a>
+    <a href="../calcul-moyenne-examen-vtc/">Calcul</a>
+    <a href="../dates-examen-vtc/">Dates</a>
+  </nav>
+</header>
+<main id="contenu">
+<nav class="crumbs" aria-label="Fil d'Ariane"><a href="../">Accueil</a><span aria-hidden="true">›</span><span aria-current="page">Calcul de la moyenne</span></nav>
+<div class="hero">
+  <p class="kicker">Outil gratuit</p>
+  <h1>Calcul de la moyenne à l’examen VTC : suis-je admissible ?</h1>
+  <p class="lead">Entrez vos notes aux 7 épreuves écrites : le calcul applique les coefficients et les notes éliminatoires de l’arrêté du 6 avril 2017. Rien n’est envoyé ni enregistré.</p>
+</div>
+
+<form class="calc" id="calc" novalidate>
+  <div class="calc-row" style="--ep:#F5B301;--ep-soft:rgba(245,179,1,.16)">
+    <span class="ep-badge">A</span>
+    <label for="nA">Réglementation T3P<span>coef. 3 · 6/20 minimum</span></label>
+    <input id="nA" name="nA" inputmode="decimal" autocomplete="off" placeholder="—" aria-describedby="calc-help">
+  </div>
+  <div class="calc-row" style="--ep:#2DD4BF;--ep-soft:rgba(45,212,191,.16)">
+    <span class="ep-badge">B</span>
+    <label for="nB">Gestion<span>coef. 2 · 6/20 minimum</span></label>
+    <input id="nB" name="nB" inputmode="decimal" autocomplete="off" placeholder="—" aria-describedby="calc-help">
+  </div>
+  <div class="calc-row" style="--ep:#FB923C;--ep-soft:rgba(251,146,60,.16)">
+    <span class="ep-badge">C</span>
+    <label for="nC">Sécurité routière<span>coef. 3 · 6/20 minimum</span></label>
+    <input id="nC" name="nC" inputmode="decimal" autocomplete="off" placeholder="—" aria-describedby="calc-help">
+  </div>
+  <div class="calc-row" style="--ep:#A78BFA;--ep-soft:rgba(167,139,250,.16)">
+    <span class="ep-badge">D</span>
+    <label for="nD">Français<span>coef. 2 · 6/20 minimum</span></label>
+    <input id="nD" name="nD" inputmode="decimal" autocomplete="off" placeholder="—" aria-describedby="calc-help">
+  </div>
+  <div class="calc-row" style="--ep:#60A5FA;--ep-soft:rgba(96,165,250,.16)">
+    <span class="ep-badge">E</span>
+    <label for="nE">Anglais<span>coef. 1 · 4/20 minimum</span></label>
+    <input id="nE" name="nE" inputmode="decimal" autocomplete="off" placeholder="—" aria-describedby="calc-help">
+  </div>
+  <div class="calc-row" style="--ep:#34D399;--ep-soft:rgba(52,211,153,.16)">
+    <span class="ep-badge">F</span>
+    <label for="nF">Développement commercial<span>coef. 3 · 6/20 minimum</span></label>
+    <input id="nF" name="nF" inputmode="decimal" autocomplete="off" placeholder="—" aria-describedby="calc-help">
+  </div>
+  <div class="calc-row" style="--ep:#F472B6;--ep-soft:rgba(244,114,182,.16)">
+    <span class="ep-badge">G</span>
+    <label for="nG">Réglementation VTC<span>coef. 3 · 6/20 minimum</span></label>
+    <input id="nG" name="nG" inputmode="decimal" autocomplete="off" placeholder="—" aria-describedby="calc-help">
+  </div>
+  <p class="muted" id="calc-help" style="margin:12px 0 0">Notes sur 20, avec ou sans virgule (exemple : 12,5).</p>
+  <div class="result" id="result" role="status" aria-live="polite">
+    <p class="result-verdict">Saisissez vos 7 notes</p>
+    <p style="margin:0">La moyenne et le verdict s’affichent au fur et à mesure.</p>
+  </div>
+  <div class="calc-actions">
+    <span class="muted">Moyenne pondérée : somme des notes × coefficients ÷ 17</span>
+    <button class="btn" type="reset">Effacer</button>
+  </div>
+</form>
+<noscript><p class="card">Le calcul automatique a besoin de JavaScript. Sans lui : multipliez chaque note par son coefficient, additionnez, divisez par 17, puis vérifiez les notes minimales du tableau ci-dessous.</p></noscript>
+
+<h2>Notes éliminatoires et moyenne : les règles de l’examen VTC</h2>
+<p>D’après l’article 2 de l’arrêté du 6 avril 2017, un candidat est admissible s’il obtient à la fois :</p>
+<ul class="check">
+  <li>une <strong>moyenne d’au moins 10/20</strong> sur les 7 épreuves, chacune comptée avec son coefficient ;</li>
+  <li>au moins <strong>6/20</strong> à chacune des épreuves A, B, C, D, F et G ;</li>
+  <li>au moins <strong>4/20</strong> à l’épreuve E (anglais).</li>
+</ul>
+<p>La moyenne est arrondie au centième (règlement de l’examen des CMA, version de décembre 2024, article II).</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Épreuve</th><th class="n hide-sm">Durée</th><th class="n">Coef.</th><th class="n hide-sm">Part</th><th class="n">Minimum</th></tr></thead>
+  <tbody><tr><td><a href="../qcm-reglementation-t3p/">A. Réglementation T3P</a></td><td class="n hide-sm">45 min</td><td class="n">3</td><td class="n hide-sm">17,6 %</td><td class="n">6/20</td></tr><tr><td><a href="../qcm-gestion-vtc/">B. Gestion</a></td><td class="n hide-sm">45 min</td><td class="n">2</td><td class="n hide-sm">11,8 %</td><td class="n">6/20</td></tr><tr><td><a href="../qcm-securite-routiere-vtc/">C. Sécurité routière</a></td><td class="n hide-sm">30 min</td><td class="n">3</td><td class="n hide-sm">17,6 %</td><td class="n">6/20</td></tr><tr><td><a href="../examen-vtc-francais/">D. Français</a></td><td class="n hide-sm">30 min</td><td class="n">2</td><td class="n hide-sm">11,8 %</td><td class="n">6/20</td></tr><tr><td><a href="../examen-vtc-anglais-qcm/">E. Anglais</a></td><td class="n hide-sm">30 min</td><td class="n">1</td><td class="n hide-sm">5,9 %</td><td class="n">4/20</td></tr><tr><td><a href="../qcm-developpement-commercial-vtc/">F. Développement commercial</a></td><td class="n hide-sm">30 min</td><td class="n">3</td><td class="n hide-sm">17,6 %</td><td class="n">6/20</td></tr><tr><td><a href="../qcm-reglementation-vtc/">G. Réglementation VTC</a></td><td class="n hide-sm">20 min</td><td class="n">3</td><td class="n hide-sm">17,6 %</td><td class="n">6/20</td></tr></tbody>
+  <tfoot><tr><th>Total</th><th class="n hide-sm">3 h 50</th><th class="n">17</th><th class="n hide-sm">100 %</th><td></td></tr></tfoot>
+</table></div>
+
+<h2>Exemple de calcul</h2>
+<p>Notes : A 10, B 8, C 13, D 11, E 6, F 10, G 9.</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Épreuve</th><th class="n">Note</th><th class="n">Coef.</th><th class="n">Points</th></tr></thead>
+  <tbody>
+    <tr><td>A. Réglementation T3P</td><td class="n">10</td><td class="n">3</td><td class="n">30</td></tr>
+    <tr><td>B. Gestion</td><td class="n">8</td><td class="n">2</td><td class="n">16</td></tr>
+    <tr><td>C. Sécurité routière</td><td class="n">13</td><td class="n">3</td><td class="n">39</td></tr>
+    <tr><td>D. Français</td><td class="n">11</td><td class="n">2</td><td class="n">22</td></tr>
+    <tr><td>E. Anglais</td><td class="n">6</td><td class="n">1</td><td class="n">6</td></tr>
+    <tr><td>F. Développement commercial</td><td class="n">10</td><td class="n">3</td><td class="n">30</td></tr>
+    <tr><td>G. Réglementation VTC</td><td class="n">9</td><td class="n">3</td><td class="n">27</td></tr>
+  </tbody>
+  <tfoot><tr><th>Total</th><td></td><th class="n">17</th><th class="n">170</th></tr></tfoot>
+</table></div>
+<p>Moyenne : 170 ÷ 17 = <strong>10/20</strong>, et aucune note sous le minimum : ce candidat est admissible, de justesse. Avec 5 au lieu de 13 en sécurité routière, il ne le serait pas, même en compensant ailleurs : 5/20 est une note éliminatoire.</p>
+
+<h2>Après l’admissibilité : l’épreuve pratique</h2>
+<p>L’admission se joue sur une mise en situation pratique, avec une phase de conduite en circulation d’au moins 20 minutes. Il faut y obtenir au moins <strong>12/20</strong>. Un candidat admissible peut se présenter trois fois à l’épreuve d’admission dans un délai d’un an (arrêté du 6 avril 2017, articles 2 et 3).</p>
+
+<aside class="cta">
+  <img class="cta-icon" src="../icon.png" alt="" width="64" height="64">
+  <div>
+    <p class="cta-title">Examen VTC 2026 – Prépa T3P</p>
+    <p class="cta-text">324 questions corrigées sur les 7 épreuves, dont 99 gratuites, et des examens blancs au format officiel.</p>
+    <span class="soon">Bientôt sur l’App Store · iPhone</span>
+  </div>
+</aside>
+
+<script>
+(() => {
+  const data = {"moyenneMin":10,"epreuves":[{"id":"A","titre":"Réglementation T3P","coef":3,"elim":6,"color":"#F5B301"},{"id":"B","titre":"Gestion","coef":2,"elim":6,"color":"#2DD4BF"},{"id":"C","titre":"Sécurité routière","coef":3,"elim":6,"color":"#FB923C"},{"id":"D","titre":"Français","coef":2,"elim":6,"color":"#A78BFA"},{"id":"E","titre":"Anglais","coef":1,"elim":4,"color":"#60A5FA"},{"id":"F","titre":"Développement commercial","coef":3,"elim":6,"color":"#34D399"},{"id":"G","titre":"Réglementation VTC","coef":3,"elim":6,"color":"#F472B6"}]};
+  const total = data.epreuves.reduce((s, e) => s + e.coef, 0);
+  const form = document.getElementById('calc');
+  const out = document.getElementById('result');
+  // Notes en centièmes (entiers) : pas d'erreur d'arrondi sur la limite de 10/20.
+  const parse = (v) => {
+    v = v.trim().replace(',', '.');
+    if (v === '') return null;
+    // « 12, » est accepté (virgule en cours de frappe) : pas d'alerte à chaque caractère.
+    if (!/^\d{1,2}(\.\d{0,2})?$/.test(v)) return NaN;
+    const c = Math.round(Number(v) * 100);
+    return c <= 2000 ? c : NaN;
+  };
+  const fmt = (c) => (c / 100).toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  const show = (cls, html) => { out.className = 'result' + (cls ? ' ' + cls : ''); out.innerHTML = html; };
+
+  function update() {
+    let filled = 0, invalid = 0, sum = 0, room3 = 0;
+    const elim = [];
+    for (const e of data.epreuves) {
+      const input = form.elements['n' + e.id];
+      const c = parse(input.value);
+      const bad = Number.isNaN(c);
+      input.setAttribute('aria-invalid', bad ? 'true' : 'false');
+      input.closest('.calc-row').classList.toggle('elim', c !== null && !bad && c < e.elim * 100);
+      if (c === null) continue;
+      if (bad) { invalid++; continue; }
+      filled++;
+      sum += c * e.coef;
+      if (e.coef === 3) room3 = Math.max(room3, 2000 - c); // marge restante sur la meilleure épreuve de coefficient 3
+      if (c < e.elim * 100) elim.push(e);
+    }
+    const elimList = elim.map((e) => `<li>Épreuve ${e.id} (${esc(e.titre)}) : moins de ${e.elim}/20, note éliminatoire.</li>`).join('');
+    if (invalid) return show('bad', '<p class="result-verdict">Note invalide</p><p style="margin:0">Chaque note doit être comprise entre 0 et 20, avec au plus deux décimales (exemple : 12,5).</p>');
+    if (filled < data.epreuves.length) {
+      if (elim.length) return show('bad', `<p class="result-verdict">Non admissible</p><ul>${elimList}</ul>`);
+      return show('', `<p class="result-verdict">Saisissez vos 7 notes</p><p style="margin:0">${filled} sur ${data.epreuves.length} pour l’instant.</p>`);
+    }
+    // « La moyenne est arrondie au centième » (règlement de l'examen des CMA, article II) : arrondi usuel.
+    const avg = Math.round(sum / total);
+    const ok = avg >= data.moyenneMin * 100 && !elim.length;
+    const missing = Math.ceil((data.moyenneMin * 100 - 0.5) * total) - sum;
+    const per3 = Math.ceil(missing / 3);
+    const reasons = [
+      missing > 0 ? `<li>Moyenne sous ${data.moyenneMin}/20 : il manque ${fmt(missing)} points pondérés${per3 <= room3 ? `, soit ${fmt(per3)} point(s) de plus sur une épreuve de coefficient 3` : ''}.</li>` : '',
+      elimList,
+    ].join('');
+    show(ok ? 'ok' : 'bad', `<p class="result-avg">${fmt(avg)} <small>/ 20</small></p>
+      <p class="result-verdict">${ok ? 'Admissible' : 'Non admissible'}</p>
+      ${ok ? '<p style="margin:0">Moyenne d’au moins 10/20 et aucune note éliminatoire : place à l’épreuve pratique d’admission.</p>' : `<ul>${reasons}</ul>`}`);
+  }
+  form.addEventListener('input', update);
+  form.addEventListener('reset', () => setTimeout(update));
+  form.addEventListener('submit', (ev) => ev.preventDefault());
+  update();
+})();
+</script>
+<section class="faq">
+  <h2>Questions fréquentes</h2>
+  <div class="card"><h3>Quelle moyenne faut-il pour être admissible à l’examen VTC ?</h3><p>Au moins 10/20 de moyenne sur les 7 épreuves écrites, calculée avec les coefficients (total de 17), et aucune note éliminatoire (arrêté du 6 avril 2017, article 2).</p></div>
+  <div class="card"><h3>Quelles sont les notes éliminatoires de l’examen VTC ?</h3><p>Une note inférieure à 6/20 aux épreuves A, B, C, D, F ou G, ou inférieure à 4/20 à l’épreuve E (anglais).</p></div>
+  <div class="card"><h3>Une bonne moyenne compense-t-elle une note éliminatoire ?</h3><p>Non. Avec une seule note éliminatoire, le candidat n’est pas admissible, même avec plus de 10/20 de moyenne.</p></div>
+  <div class="card"><h3>Mes notes sont-elles enregistrées ?</h3><p>Non. Le calcul se fait dans votre navigateur : les notes ne sont ni envoyées ni conservées.</p></div>
+</section>
+<p class="updated">Mis à jour le 14 octobre 2026</p>
+</main>
+<footer class="foot">
+  <div class="foot-cols">
+    <div><p class="foot-title">QCM par épreuve</p><ul><li><a href="../qcm-reglementation-t3p/">QCM Réglementation T3P</a></li><li><a href="../qcm-gestion-vtc/">QCM Gestion</a></li><li><a href="../qcm-securite-routiere-vtc/">QCM Sécurité routière</a></li><li><a href="../examen-vtc-francais/">QCM Français</a></li><li><a href="../examen-vtc-anglais-qcm/">QCM Anglais</a></li><li><a href="../qcm-developpement-commercial-vtc/">QCM Développement commercial</a></li><li><a href="../qcm-reglementation-vtc/">QCM Réglementation VTC</a></li></ul></div>
+    <div><p class="foot-title">Outils</p><ul><li><a href="../calcul-moyenne-examen-vtc/">Calcul de la moyenne</a></li><li><a href="../dates-examen-vtc/">Dates de l’examen</a></li></ul>
+      <p class="foot-title">L’app</p><ul><li><a href="../#aide">Aide et contact</a></li><li><a href="../confidentialite.html">Confidentialité</a></li><li><a href="../mentions-legales.html">Mentions légales</a></li></ul></div>
+  </div>
+  <p class="muted">Application indépendante, non affiliée aux chambres de métiers et de l’artisanat (CMA) ni à l’administration. En cas de doute, la réglementation officielle fait foi.</p>
+</footer>
+</body>
+</html>
