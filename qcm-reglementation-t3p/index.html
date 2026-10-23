@@ -107,6 +107,12 @@ details[open] summary { margin-bottom:8px; }
 .calc-row input[aria-invalid="true"] { border-color:var(--bad); }
 .calc-row.elim input { border-color:var(--bad); color:var(--bad); }
 .calc-actions { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top:14px; flex-wrap:wrap; }
+.pdf { display:flex; gap:14px; align-items:flex-start; background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--ep); border-radius:16px; padding:14px 16px; margin:14px 0 4px; }
+.pdf-icon { flex:none; width:40px; height:40px; color:var(--ep); }
+.pdf-title { font-weight:800; font-size:17px; margin-bottom:2px; }
+.pdf p:not(.pdf-title) { color:var(--soft); font-size:15px; margin-bottom:10px; }
+.pdf-btn { display:inline-flex; align-items:center; gap:8px; min-height:44px; padding:0 16px; border-radius:12px; background:var(--ep); color:#0A1020; font-weight:700; font-size:15px; text-decoration:none; }
+.pdf-btn:hover { filter:brightness(1.08); }
 .btn { font:inherit; font-weight:700; font-size:15px; border-radius:12px; padding:9px 14px; cursor:pointer; border:1px solid var(--border); background:var(--surface2); color:var(--text); }
 .result { border-radius:18px; padding:16px 18px; margin-top:16px; background:var(--surface2); }
 .result.ok { background:var(--ok-bg); box-shadow:inset 0 0 0 1px var(--ok); }
@@ -208,6 +214,15 @@ table.next td a:hover { text-decoration:underline; }
   <div><dt>Note minimale</dt><dd>6/20<small>en dessous : éliminatoire</small></dd></div>
   <div><dt>Questions</dt><dd>15<small>10 QCM + 5 réponses courtes</small></dd></div>
 </dl>
+
+<aside class="pdf">
+  <svg class="pdf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M12 11v6"/><path d="m9.5 14.5 2.5 2.5 2.5-2.5"/></svg>
+  <div>
+    <p class="pdf-title">QCM corrigé de l’épreuve A en PDF</p>
+    <p>12 QCM à cocher et 3 questions à réponse courte, puis leur corrigé expliqué : 5 pages A4 à imprimer. Ce ne sont pas des annales officielles, mais des questions rédigées pour l’app, au format de l’examen.</p>
+    <a class="pdf-btn" href="qcm-vtc-epreuve-a-corrige.pdf" download>Télécharger le PDF (120 Ko)</a>
+  </div>
+</aside>
 
 <h2>Ce que couvre l’épreuve A</h2>
 <p>L’épreuve porte sur la réglementation du transport public particulier de personnes et la prévention des discriminations et des violences sexuelles et sexistes (arrêté du 6 avril 2017, article 2). Elle est commune aux examens taxi et VTC : 10 QCM à 1 point et 5 questions à réponse courte à 2 points.</p><p>L’arrêté du 20 mars 2024 a ajouté au programme trois compétences : reconnaître les comportements qui constituent une infraction sexuelle ou sexiste (outrage sexiste, agression sexuelle, harcèlement sexuel, viol) ; connaître les critères de discrimination de l’article 225-1 du Code pénal et les peines encourues ; connaître les organismes de prévention et de lutte contre ces violences et ces discriminations, et savoir quand les solliciter.</p>
