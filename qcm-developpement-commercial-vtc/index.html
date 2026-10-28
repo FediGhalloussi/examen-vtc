@@ -9,7 +9,8 @@
 <link rel="canonical" href="https://prepavtc.fr/qcm-developpement-commercial-vtc/">
 <link rel="icon" href="https://prepavtc.fr/icon.png">
 <link rel="apple-touch-icon" href="https://prepavtc.fr/icon.png">
-<meta name="theme-color" content="#0A1020">
+<link rel="preload" href="/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="theme-color" content="#F6F4EE">
 <meta name="apple-itunes-app" content="app-id=6820546888">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
@@ -23,166 +24,424 @@
 <meta property="og:image:alt" content="Examen VTC : QCM corrigés et examens blancs sur iPhone">
 <meta name="twitter:card" content="summary_large_image">
 <style>
-:root { --bg:#0A1020; --surface:#131C2F; --surface2:#1A2540; --border:rgba(255,255,255,.08); --text:#F3F5F9; --soft:#C9D0DC; --muted:#8C96AB; --accent:#F5B301; --accent-text:#1A1300; --ok:#34D399; --ok-bg:rgba(52,211,153,.12); --bad:#F87171; --bad-bg:rgba(248,113,113,.12); --ep:#F5B301; --ep-soft:rgba(245,179,1,.16); color-scheme:dark; }
-* { box-sizing:border-box; }
-html { -webkit-text-size-adjust:100%; }
-body { margin:0; background:var(--bg); color:var(--text); font:17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
-a { color:var(--accent); text-underline-offset:2px; }
-a:focus-visible, summary:focus-visible, input:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline-offset:2px; border-radius:6px; }
-img { max-width:100%; }
-.top { display:flex; align-items:center; justify-content:space-between; gap:8px; max-width:800px; margin:0 auto; padding:14px 16px; }
-.brand { display:flex; align-items:center; gap:10px; color:var(--text); text-decoration:none; font-weight:800; font-size:17px; white-space:nowrap; }
-.brand img { width:32px; height:32px; border-radius:8px; }
-.links { display:flex; gap:2px; }
-.links a { display:inline-flex; align-items:center; min-height:44px; color:var(--soft); text-decoration:none; font-weight:600; font-size:15px; padding:0 10px; border-radius:10px; }
-.links a:hover { color:var(--text); background:var(--surface); }
-main { max-width:800px; margin:0 auto; padding:8px 16px 48px; }
-h1 { font-size:34px; line-height:1.15; letter-spacing:-.5px; margin:8px 0 12px; }
-h2 { font-size:23px; line-height:1.25; margin:44px 0 12px; letter-spacing:-.2px; }
-h3 { font-size:17px; margin:0 0 4px; }
-p { margin:0 0 14px; }
-.lead { font-size:19px; color:var(--soft); }
-.kicker { display:flex; align-items:center; gap:8px; color:var(--accent); font-weight:800; letter-spacing:1.5px; font-size:13px; text-transform:uppercase; margin:0 0 4px; }
-.hero .kicker { color:var(--ep); }
-.muted, .updated { color:var(--muted); font-size:14px; }
-.updated { margin-top:32px; }
-.crumbs { display:flex; flex-wrap:wrap; gap:6px; font-size:14px; color:var(--muted); margin:4px 0 12px; }
-.crumbs a { color:var(--muted); }
-.card { background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:16px 18px; margin:10px 0; }
-.card p:last-child { margin-bottom:0; }
-ul, ol { padding-left:22px; }
-li { margin:4px 0; }
-.check { list-style:none; padding:0; }
-.check li { position:relative; padding-left:30px; margin:10px 0; }
-.check li::before { content:""; position:absolute; left:2px; top:7px; width:16px; height:9px; border-left:3px solid var(--accent); border-bottom:3px solid var(--accent); transform:rotate(-45deg); }
-.tips li { margin:8px 0; }
-/* Épreuves */
-.ep-grid { list-style:none; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:12px 0 16px; }
-.ep-grid li { margin:0; }
-.ep-card { display:flex; align-items:center; gap:12px; height:100%; background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:12px 14px; color:var(--text); text-decoration:none; }
-.ep-card:hover { border-color:var(--ep); }
-.ep-badge { flex:none; display:inline-grid; place-items:center; width:40px; height:40px; border-radius:12px; background:var(--ep-soft); color:var(--ep); font-weight:800; font-size:19px; }
-.ep-badge.sm { width:26px; height:26px; border-radius:8px; font-size:14px; letter-spacing:0; }
-.ep-body { display:flex; flex-direction:column; min-width:0; line-height:1.3; }
-.ep-meta { color:var(--muted); font-size:13.5px; margin-top:2px; }
-.ep-arrow { margin-left:auto; color:var(--muted); font-size:24px; line-height:1; }
-.facts { display:grid; grid-template-columns:repeat(4, 1fr); gap:10px; margin:20px 0 8px; }
-.facts div { background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:12px 14px; }
-.facts dt { color:var(--muted); font-size:13px; font-weight:600; }
-.facts dd { margin:2px 0 0; font-size:24px; font-weight:800; color:var(--ep); line-height:1.2; }
-.facts small { display:block; color:var(--muted); font-size:12.5px; font-weight:500; margin-top:2px; }
-.themes-title { color:var(--muted); font-size:15px; margin-bottom:6px; }
-.chips { list-style:none; padding:0; display:flex; flex-wrap:wrap; gap:6px; }
-.chips li { margin:0; background:var(--surface2); border-radius:999px; padding:4px 12px; font-size:14px; color:var(--soft); }
-/* Questions */
-.passage { background:var(--surface); border-left:4px solid var(--ep); border-radius:4px 16px 16px 4px; margin:16px 0; padding:14px 18px; }
-.passage figcaption { font-weight:800; margin-bottom:8px; }
-.passage p { color:var(--soft); }
-.quiz { list-style:none; padding:0; counter-reset:none; }
-.q { background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:16px 18px; margin:12px 0; }
-.q-kicker { color:var(--muted); font-size:13px; font-weight:600; margin-bottom:6px; }
-.q-text { font-weight:700; font-size:18px; line-height:1.4; }
-.choices { list-style:none; padding:0; margin:0 0 10px; }
-.choices li { display:flex; gap:10px; align-items:flex-start; background:var(--surface2); border-radius:12px; padding:9px 12px; margin:6px 0; }
-.choices .l { flex:none; width:22px; height:22px; display:inline-grid; place-items:center; border-radius:6px; background:rgba(255,255,255,.08); font-size:13px; font-weight:700; margin-top:2px; }
-details { border-top:1px solid var(--border); padding-top:10px; }
-summary { cursor:pointer; color:var(--accent); font-weight:700; }
-details[open] summary { margin-bottom:8px; }
-.q:has(details[open]) .choices li.ok { background:var(--ok-bg); box-shadow:inset 0 0 0 1px var(--ok); }
-.answer strong { color:var(--ok); }
-.src { color:var(--muted); font-size:14px; }
-/* Appel à l'app */
-.cta { display:flex; gap:16px; align-items:flex-start; background:linear-gradient(135deg, rgba(245,179,1,.12), rgba(245,179,1,.03)); border:1px solid rgba(245,179,1,.35); border-radius:20px; padding:18px 20px; margin:28px 0; }
-.cta-icon { flex:none; width:64px; height:64px; border-radius:15px; }
-.cta-title { font-weight:800; font-size:19px; margin-bottom:4px; line-height:1.3; }
-.cta-text { color:var(--soft); margin-bottom:12px; }
-.soon { display:inline-block; border:1px solid var(--border); background:var(--surface2); color:var(--soft); border-radius:12px; padding:8px 14px; font-weight:700; font-size:15px; }
-.store img { display:block; height:50px; width:auto; }
-/* Calculateur */
-.calc { background:var(--surface); border:1px solid var(--border); border-radius:20px; padding:8px 18px 18px; margin:20px 0; }
-.calc-row { display:grid; grid-template-columns:auto 1fr 96px; gap:12px; align-items:center; padding:10px 0; border-bottom:1px solid var(--border); }
-.calc-row label { display:flex; flex-direction:column; line-height:1.3; font-weight:700; }
-.calc-row label span { color:var(--muted); font-size:13.5px; font-weight:500; }
-.calc-row input { width:100%; font:inherit; font-size:20px; font-weight:700; text-align:center; color:var(--text); background:var(--bg); border:1px solid rgba(255,255,255,.42); border-radius:12px; padding:8px 6px; }
-.calc-row input[aria-invalid="true"] { border-color:var(--bad); }
-.calc-row.elim input { border-color:var(--bad); color:var(--bad); }
-.calc-actions { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top:14px; flex-wrap:wrap; }
-.pdf { display:flex; gap:14px; align-items:flex-start; background:var(--surface); border:1px solid var(--border); border-left:4px solid var(--ep); border-radius:16px; padding:14px 16px; margin:14px 0 4px; }
-.pdf-icon { flex:none; width:40px; height:40px; color:var(--ep); }
-.pdf-title { font-weight:800; font-size:17px; margin-bottom:2px; }
-.pdf p:not(.pdf-title) { color:var(--soft); font-size:15px; margin-bottom:10px; }
-.pdf-btn { display:inline-flex; align-items:center; gap:8px; min-height:44px; padding:0 16px; border-radius:12px; background:var(--ep); color:#0A1020; font-weight:700; font-size:15px; text-decoration:none; }
-.pdf-btn:hover { filter:brightness(1.08); }
-.btn { font:inherit; font-weight:700; font-size:15px; border-radius:12px; padding:9px 14px; cursor:pointer; border:1px solid var(--border); background:var(--surface2); color:var(--text); }
-.result { border-radius:18px; padding:16px 18px; margin-top:16px; background:var(--surface2); }
-.result.ok { background:var(--ok-bg); box-shadow:inset 0 0 0 1px var(--ok); }
-.result.bad { background:var(--bad-bg); box-shadow:inset 0 0 0 1px var(--bad); }
-.result-avg { font-size:36px; font-weight:800; line-height:1.1; margin:0 0 4px; }
-.result-avg small { font-size:18px; color:var(--muted); font-weight:700; }
-.result-verdict { font-weight:800; font-size:19px; margin:0 0 6px; }
-.result.ok .result-verdict { color:var(--ok); }
-.result.bad .result-verdict { color:var(--bad); }
-.result ul { margin:6px 0 0; }
-table { width:100%; border-collapse:collapse; margin:12px 0 16px; font-size:16px; }
-th, td { text-align:left; padding:9px 10px; border-bottom:1px solid var(--border); vertical-align:top; }
-th { color:var(--muted); font-size:13.5px; font-weight:700; }
-td.n, th.n { text-align:right; white-space:nowrap; }
-.table-wrap { overflow-x:auto; }
+/* Site prepavtc.fr : clair et éditorial ; le bleu nuit et le jaune de l'app servent aux bandeaux « produit »
+   (question à essayer, Pass, appel à l'app, pied de page). Police Archivo hébergée sur le site (axe de largeur :
+   titres élargis, chiffres étroits). / est remplacé par le chemin du site à la génération. */
+@font-face { font-family: Archivo; font-style: normal; font-weight: 400 900; font-stretch: 62% 125%; font-display: swap; src: url("/fonts/archivo-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+:root {
+  --paper: #F6F4EE; --paper2: #ECE8DE; --card: #FFFFFF;
+  --ink: #14161B; --ink2: #3B3F48; --muted: #62666F; --rule: #D8D3C6; --rule2: #C4BEAF; --line-ui: #918C7E;
+  --night: #0A1020; --night2: #131C2F; --night3: #1A2540; --night-rule: #26324D;
+  --on-night: #F3F5F9; --on-night-muted: #A3ACBE;
+  --yellow: #F5B301; --yellow-ink: #1A1300;
+  --ok: #12753F; --ok-bg: #E2F2E8; --bad: #B42318; --bad-bg: #FBE8E6;
+  --ok-n: #34D399; --bad-n: #F87171;
+  --ep: var(--yellow);
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: Archivo, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 17px; line-height: 1.6; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-underline-offset: 3px; }
+p { margin: 0 0 1em; }
+figure { margin: 0; }
+h1, h2, h3 { margin: 0; font-weight: 800; font-stretch: 112%; letter-spacing: -.015em; line-height: 1.04; }
+h1 { font-size: clamp(38px, 5.4vw, 64px); }
+h2 { font-size: clamp(28px, 3.3vw, 40px); }
+h3 { font-size: 19px; font-stretch: 100%; letter-spacing: 0; line-height: 1.3; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+[hidden] { display: none !important; }
+.show-sm { display: none; }
+.muted { color: var(--muted); font-size: 15px; }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.skip { position: absolute; left: -9999px; top: 8px; z-index: 10; background: var(--yellow); color: var(--yellow-ink); font-weight: 800; padding: 10px 14px; border-radius: 10px; }
+.skip:focus { left: 16px; }
+
+/* En-tête */
+.top { border-bottom: 1px solid var(--rule); }
+.top .wrap { display: flex; align-items: center; gap: 16px; height: 64px; }
+.brand { display: flex; align-items: center; min-height: 44px; gap: 10px; text-decoration: none; font-weight: 800; font-stretch: 112%; font-size: 18px; letter-spacing: -.01em; white-space: nowrap; }
+.brand img { width: 32px; height: 32px; border-radius: 8px; }
+.nav { display: flex; gap: 2px; margin-left: auto; }
+.nav a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; color: var(--ink2); font-size: 15px; font-weight: 500; padding: 8px 12px; border-radius: 8px; white-space: nowrap; }
+.nav a:hover { background: var(--paper2); color: var(--ink); }
+.nav a[aria-current="page"] { color: var(--ink); font-weight: 700; }
+.get { display: inline-flex; align-items: center; min-height: 44px; background: var(--ink); color: var(--paper); text-decoration: none; font-weight: 700; font-size: 14px; padding: 0 16px; border-radius: 999px; white-space: nowrap; }
+.get:hover { background: #2A2E37; }
+
+/* Accueil : ouverture */
+.hero { border-bottom: 1px solid var(--rule); overflow: hidden; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 56px; padding-top: 64px; }
+.hero-text { padding-bottom: 72px; }
+.next-exams { display: flex; align-items: baseline; gap: 10px; color: var(--ink2); font-size: 15px; margin-bottom: 28px; }
+.next-exams::before { content: ""; flex: none; width: 9px; height: 9px; background: var(--yellow); border-radius: 2px; transform: translateY(-1px); }
+.next-exams a { display: inline-block; padding: 12px 0; margin: -12px 0; }
+.lead { font-size: 20px; line-height: 1.5; color: var(--ink2); max-width: 32em; margin: 24px 0 32px; }
+.cta-row { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.badge { display: inline-block; }
+.badge img { height: 52px; width: auto; }
+.soon { display: inline-block; border: 1px solid var(--rule2); background: var(--card); color: var(--ink2); border-radius: 12px; padding: 10px 16px; font-weight: 700; font-size: 15px; }
+.cta-note { margin: 0; font-size: 15px; line-height: 1.45; color: var(--ink2); }
+.cta-note strong { color: var(--ink); }
+.small { font-size: 14.5px; color: var(--muted); margin: 22px 0 0; }
+.hero-phone { align-self: end; justify-self: center; width: min(100%, 330px); }
+.phone { background: #04070E; border-radius: 46px 46px 0 0; padding: 11px 11px 0; box-shadow: 0 40px 70px -30px rgba(20, 22, 27, .45); }
+.phone img { width: 100%; border-radius: 36px 36px 0 0; aspect-ratio: 660 / 1060; object-fit: cover; object-position: top; }
+
+/* Bandeau « Essayez une question » */
+.try-band { background: var(--night); color: var(--on-night); padding: 80px 0; }
+.try-band .wrap { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 64px; align-items: start; }
+.try-intro p { color: var(--on-night-muted); margin-top: 18px; }
+.try-intro a { color: var(--on-night); font-weight: 700; }
+.more { display: inline-block; padding: 12px 0; }
+.try { background: var(--night2); border: 1px solid var(--night-rule); border-radius: 22px; padding: 26px; }
+.q-meta { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); margin: 0 0 10px; }
+.try .q-meta { color: var(--on-night-muted); }
+.letter { flex: none; display: inline-grid; place-items: center; width: 36px; height: 36px; border-radius: 9px; background: var(--ep); color: var(--ink); font-weight: 800; font-stretch: 112%; font-size: 18px; line-height: 1; }
+.letter.sm { width: 24px; height: 24px; border-radius: 6px; font-size: 13px; }
+.q-text { font-size: 21px; font-weight: 700; line-height: 1.35; margin: 0 0 4px; }
+.q-hint { font-size: 14px; color: var(--muted); margin: 0 0 16px; }
+.try .q-hint { color: var(--on-night-muted); }
+.opts { margin: 0 0 16px; }
+.opt { position: relative; display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; border: 1px solid var(--line-ui); background: var(--card); border-radius: 14px; margin-bottom: 8px; cursor: pointer; line-height: 1.45; }
+.opt input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.key { flex: none; display: grid; place-items: center; width: 26px; height: 26px; border-radius: 7px; background: var(--paper2); font-weight: 700; font-size: 13px; text-transform: uppercase; margin-top: -1px; }
+.opt:hover { border-color: var(--ink2); }
+.opt:not(.is-ok, .is-bad):has(input:checked) { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+.opt:not(.is-ok, .is-bad):has(input:checked) .key { background: var(--ink); color: var(--paper); }
+.opt:has(input:focus-visible) { outline: 2px solid var(--ink); outline-offset: 2px; }
+.opt.is-ok { border-color: var(--ok); box-shadow: inset 0 0 0 1px var(--ok); background: var(--ok-bg); }
+.opt.is-ok .key { background: var(--ok); color: #fff; }
+.opt.is-bad { border-color: var(--bad); box-shadow: inset 0 0 0 1px var(--bad); background: var(--bad-bg); }
+.opt.is-bad .key { background: var(--bad); color: #fff; }
+.try .opt { background: var(--night3); border-color: var(--night-rule); }
+.try .key { background: rgba(255, 255, 255, .09); }
+.try .opt:hover { border-color: #3A4868; }
+.try .opt:not(.is-ok, .is-bad):has(input:checked) { border-color: var(--yellow); box-shadow: inset 0 0 0 1px var(--yellow); }
+.try .opt:not(.is-ok, .is-bad):has(input:checked) .key { background: var(--yellow); color: var(--yellow-ink); }
+.try .opt:has(input:focus-visible) { outline-color: var(--yellow); }
+.try .opt.is-ok { border-color: var(--ok-n); box-shadow: inset 0 0 0 1px var(--ok-n); background: rgba(52, 211, 153, .1); }
+.try .opt.is-ok .key { background: var(--ok-n); color: #04210F; }
+.try .opt.is-bad { border-color: var(--bad-n); box-shadow: inset 0 0 0 1px var(--bad-n); background: rgba(248, 113, 113, .1); }
+.try .opt.is-bad .key { background: var(--bad-n); color: #2A0606; }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; border: 0; border-radius: 14px; font: inherit; font-weight: 800; font-size: 16px; cursor: pointer; text-decoration: none; }
+.btn-y { background: var(--yellow); color: var(--yellow-ink); }
+.btn-y:hover { background: #FFC21A; }
+.btn-ink { background: var(--ink); color: var(--paper); }
+.btn-ink:hover { background: #2A2E37; }
+.btn-line { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1px var(--line-ui); }
+.btn-line:hover { box-shadow: inset 0 0 0 1px var(--ink); }
+.btn-ghost { background: transparent; color: var(--on-night); box-shadow: inset 0 0 0 1px var(--night-rule); margin-top: 8px; }
+.btn-ghost:hover { box-shadow: inset 0 0 0 1px #4A5878; }
+.try-result { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--night-rule); }
+.verdict { font-weight: 800; font-size: 19px; margin-bottom: 6px; }
+.verdict.ok { color: var(--ok-n); }
+.verdict.bad { color: var(--bad-n); }
+.src { font-size: 14px; color: var(--muted); margin: 0; }
+.try .src { color: var(--on-night-muted); }
+
+/* Sections */
+.section { padding: 88px 0; border-bottom: 1px solid var(--rule); }
+.section-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: end; margin-bottom: 40px; }
+.section-head p { color: var(--ink2); margin: 0; }
+.section-head:has(> :only-child) { grid-template-columns: minmax(0, 1fr); }
+.split { display: grid; grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr); gap: 56px; }
+.split > :first-child p { color: var(--ink2); margin-top: 16px; }
+.page-head { border-bottom: 1px solid var(--rule); }
+.page-head .wrap { padding-top: 8px; padding-bottom: 56px; }
+.page-head h1 { margin-top: 28px; font-size: clamp(34px, 4.4vw, 52px); max-width: 17em; }
+.page-head .lead { max-width: 40em; margin-bottom: 0; }
+.page-foot { padding: 28px 0; }
+.updated { font-size: 14px; color: var(--muted); margin: 16px 0 0; }
+
+/* Tableau des épreuves */
+.ep-table { width: 100%; border-collapse: collapse; }
+.ep-table th { font-size: 13.5px; font-weight: 600; color: var(--muted); text-align: left; padding: 0 12px 10px; border-bottom: 2px solid var(--ink); white-space: nowrap; }
+.ep-table th:first-child, .ep-table td:first-child { padding-left: 0; }
+.ep-table td { padding: 15px 12px; border-bottom: 1px solid var(--rule); vertical-align: middle; }
+.ep-table .n { font-stretch: 75%; font-weight: 700; font-size: 21px; font-variant-numeric: tabular-nums; white-space: nowrap; line-height: 1.2; }
+.ep-table .n small { display: block; font-stretch: 100%; font-weight: 400; font-size: 13px; color: var(--muted); }
+.ep-link { display: flex; align-items: center; min-height: 44px; gap: 14px; text-decoration: none; font-weight: 700; font-size: 18px; line-height: 1.25; }
+.ep-link:hover .ep-name { text-decoration: underline; text-decoration-thickness: 2px; text-decoration-color: var(--ep); }
+.weight { display: flex; align-items: center; gap: 12px; }
+.bar { display: block; flex: none; width: 84px; height: 6px; background: var(--paper2); border-radius: 3px; overflow: hidden; }
+.bar i { display: block; height: 100%; width: var(--w); background: var(--ink); }
+.ep-table tfoot td { border-bottom: 0; border-top: 2px solid var(--ink); font-weight: 700; }
+.table-note { font-size: 14px; color: var(--muted); margin: 16px 0 0; }
+
+/* Tableaux de données (moyenne, dates) */
+.data-table { width: 100%; border-collapse: collapse; margin: 0 0 16px; font-size: 16px; }
+.data-table th, .data-table td { text-align: left; padding: 11px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+.data-table th:first-child, .data-table td:first-child { padding-left: 0; }
+.data-table th:last-child, .data-table td:last-child { padding-right: 0; }
+.data-table thead th { font-size: 13.5px; font-weight: 600; color: var(--muted); border-bottom: 2px solid var(--ink); white-space: nowrap; }
+.data-table tfoot th, .data-table tfoot td { border-top: 2px solid var(--ink); border-bottom: 0; font-weight: 700; color: var(--ink); font-size: 16px; }
+.data-table .n { text-align: right; white-space: nowrap; font-stretch: 75%; font-weight: 700; font-size: 19px; font-variant-numeric: tabular-nums; }
+.data-table thead .n { font-stretch: 100%; font-weight: 600; font-size: 13.5px; }
+.table-wrap { overflow-x: auto; }
+
+/* Écrans de l'app */
+.screens { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin: 0; padding: 0; list-style: none; }
+.shot { background: #04070E; border-radius: 30px; padding: 9px; }
+.shot img { border-radius: 22px; aspect-ratio: 660 / 1350; object-fit: cover; object-position: top; width: 100%; }
+.screens h3 { margin: 18px 0 4px; font-size: 19px; }
+.screens p { color: var(--ink2); font-size: 15.5px; margin: 0; }
+
+/* Gratuit / Pass */
+.offer { display: grid; grid-template-columns: 1fr 1fr; border: 2px solid var(--ink); border-radius: 22px; overflow: hidden; background: var(--card); }
+.offer > div { padding: 30px; }
+.offer .pass { background: var(--night); color: var(--on-night); }
+.offer h3 { font-size: 21px; font-stretch: 112%; }
+.price { font-stretch: 75%; font-weight: 800; font-size: 48px; line-height: 1; margin: 14px 0 4px; font-variant-numeric: tabular-nums; }
+.price-note { font-size: 14.5px; color: var(--muted); margin: 0; }
+.pass .price-note { color: var(--on-night-muted); }
+.pass h3 { color: var(--yellow); }
+.offer ul { list-style: none; padding: 0; margin: 22px 0 0; }
+.offer li { padding: 11px 0; border-top: 1px solid var(--rule); }
+.pass li { border-top-color: var(--night-rule); }
+
+/* Liens « outils » */
+.tools { list-style: none; padding: 0; margin: 0; border-top: 2px solid var(--ink); }
+.tools a { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 24px; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--rule); text-decoration: none; }
+.tools b { font-size: 24px; font-weight: 800; font-stretch: 112%; letter-spacing: -.01em; line-height: 1.15; }
+.tools span { grid-column: 1; color: var(--ink2); font-size: 15.5px; }
+.tools .arrow { grid-column: 2; grid-row: 1 / span 2; font-size: 26px; transition: transform .15s; }
+.tools a:hover b { text-decoration: underline; text-decoration-thickness: 2px; text-decoration-color: var(--yellow); }
+.tools a:hover .arrow { transform: translateX(4px); }
+
+/* Questions fréquentes */
+.faq { border-top: 2px solid var(--ink); }
+.faq details { border-bottom: 1px solid var(--rule); }
+.faq summary { list-style: none; cursor: pointer; padding: 20px 44px 20px 0; font-weight: 700; font-size: 18px; line-height: 1.35; position: relative; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: ""; position: absolute; right: 8px; top: 50%; width: 10px; height: 10px; border-right: 2px solid; border-bottom: 2px solid; transform: translateY(-75%) rotate(45deg); transition: transform .2s; }
+.faq details[open] summary::after { transform: translateY(-25%) rotate(-135deg); }
+.faq details p { color: var(--ink2); padding: 0 44px 22px 0; margin: 0; }
+.contact { margin-top: 24px; padding: 18px 20px; background: var(--card); border: 1px solid var(--rule); border-radius: 14px; font-size: 15.5px; }
+
+/* Listes */
+.rules { list-style: none; padding: 0; margin: 0 0 24px; border-top: 2px solid var(--ink); }
+.rules li { position: relative; padding: 14px 0 14px 26px; border-bottom: 1px solid var(--rule); color: var(--ink2); }
+.rules li::before { content: ""; position: absolute; left: 2px; top: 23px; width: 9px; height: 9px; background: var(--yellow); border-radius: 2px; }
+.rules strong { color: var(--ink); }
+.tips { list-style: none; padding: 0; margin: 0; counter-reset: t; border-top: 2px solid var(--ink); }
+.tips li { counter-increment: t; display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 0 16px; padding: 20px 0; border-bottom: 1px solid var(--rule); color: var(--ink2); }
+.tips li::before { content: counter(t, decimal-leading-zero); font-stretch: 75%; font-weight: 800; font-size: 30px; line-height: 1; color: var(--ink); }
+.ep-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: 48px; border-top: 2px solid var(--ink); }
+.ep-list a { display: flex; align-items: center; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--rule); text-decoration: none; }
+.ep-list b { display: block; font-size: 17px; line-height: 1.25; }
+.ep-list small { color: var(--muted); font-size: 14px; }
+.ep-list .arrow { margin-left: auto; font-size: 20px; color: var(--muted); }
+.ep-list a:hover b { text-decoration: underline; text-decoration-thickness: 2px; text-decoration-color: var(--ep); }
+.prose { max-width: 42em; }
+.prose p, .prose li { color: var(--ink2); }
+.prose a { color: var(--ink); }
+.legal h2 { font-size: 24px; margin: 44px 0 12px; }
+.legal h2:first-child { margin-top: 0; }
+.legal ul { padding-left: 22px; }
+.legal li { margin: 6px 0; }
+
+/* Page d'épreuve */
+.crumbs { font-size: 14px; color: var(--muted); padding-top: 8px; }
+.crumbs a { display: inline-block; padding: 12px 0; color: var(--ink2); }
+.crumbs span[aria-hidden] { margin: 0 8px; }
+.app-line { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; padding: 8px 16px 8px 8px; border: 1px solid var(--rule2); border-radius: 14px; background: var(--card); text-decoration: none; font-size: 15px; line-height: 1.35; color: var(--ink2); }
+.app-line img { flex: none; width: 36px; height: 36px; border-radius: 9px; }
+.app-line b { color: var(--ink); }
+.app-line:hover { border-color: var(--ink); }
+.ep-hero { border-bottom: 1px solid var(--rule); }
+.ep-hero .wrap { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 56px; align-items: start; padding-top: 8px; padding-bottom: 64px; }
+.ep-label { display: flex; align-items: center; gap: 14px; color: var(--ink2); font-size: 15.5px; margin: 28px 0 22px; }
+.ep-label .letter { width: 48px; height: 48px; font-size: 25px; border-radius: 12px; }
+.ep-hero h1 { font-size: clamp(34px, 4.4vw, 52px); }
+.sheet { background: var(--card); border: 2px solid var(--ink); border-radius: 18px; overflow: hidden; margin-top: 56px; }
+.sheet-head { display: flex; justify-content: space-between; gap: 12px; padding: 12px 20px; border-bottom: 2px solid var(--ink); font-size: 14px; font-weight: 700; }
+.sheet-head span { color: var(--muted); font-weight: 400; }
+.sheet dl { margin: 0; display: grid; grid-template-columns: 1fr 1fr; }
+.sheet dl > div { padding: 18px 20px; }
+.sheet dl > div:nth-child(odd) { border-right: 1px solid var(--rule); }
+.sheet dl > div:nth-child(-n + 2) { border-bottom: 1px solid var(--rule); }
+.sheet dt { font-size: 13.5px; color: var(--muted); }
+.sheet dd { margin: 2px 0 0; font-stretch: 75%; font-weight: 800; font-size: 38px; line-height: 1.05; font-variant-numeric: tabular-nums; }
+.sheet dd small { display: block; font-stretch: 100%; font-weight: 400; font-size: 13.5px; color: var(--ink2); line-height: 1.35; margin-top: 4px; }
+.sheet .weight-line { padding: 14px 20px 16px; border-top: 1px solid var(--rule); font-size: 14px; color: var(--ink2); }
+.sheet .weight-line .bar { width: 100%; height: 8px; margin-top: 8px; }
+.sheet .weight-line .bar i { background: var(--ep); }
+
+.doc { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 26px; align-items: center; padding: 26px; background: var(--card); border: 1px solid var(--rule2); border-radius: 18px; }
+.doc-page { position: relative; width: 78px; height: 104px; background: #fff; border: 1.5px solid var(--ink); border-radius: 4px 14px 4px 4px; box-shadow: 6px 6px 0 var(--paper2); }
+.doc-page::before { content: ""; position: absolute; left: 12px; right: 12px; top: 36px; bottom: 14px; background: repeating-linear-gradient(to bottom, var(--rule2) 0 1.5px, transparent 1.5px 9px); }
+.doc-page .letter { position: absolute; left: 10px; top: 10px; }
+.doc h2 { font-size: 22px; font-stretch: 112%; }
+.doc p { color: var(--ink2); font-size: 15.5px; margin: 8px 0 16px; }
+
+.themes-title { margin: 24px 0 0; font-weight: 700; color: var(--ink); }
+.themes { display: flex; flex-wrap: wrap; list-style: none; padding: 0; margin: 12px 0 0; font-size: 15px; }
+.themes li { padding: 4px 14px 4px 0; margin: 0 14px 8px 0; border-right: 1px solid var(--rule2); line-height: 1.3; color: var(--ink2); }
+.themes li:last-child { border-right: 0; }
+
+.passage { margin: 0 0 32px; padding: 22px 24px; background: var(--card); border-left: 4px solid var(--ep); border-radius: 0 14px 14px 0; max-width: 46em; }
+.passage figcaption { font-weight: 800; margin-bottom: 10px; }
+.passage p { color: var(--ink2); }
+.passage p:last-child { margin-bottom: 0; }
+.quiz { list-style: none; padding: 0; margin: 0; border-top: 2px solid var(--ink); }
+.q { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 0 24px; padding: 34px 0; border-bottom: 1px solid var(--rule); }
+.q > div { max-width: 780px; }
+.q-num { font-stretch: 75%; font-weight: 800; font-size: 44px; line-height: .9; color: var(--muted); font-variant-numeric: tabular-nums; }
+.q .q-text { font-size: 20px; margin-bottom: 4px; }
+.q .q-text:has(+ details) { margin-bottom: 10px; }
+.q details { margin-top: 4px; }
+.q summary { display: inline-flex; align-items: center; min-height: 44px; font-weight: 800; cursor: pointer; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 5px; text-decoration-color: var(--ep); list-style: none; }
+.q summary::-webkit-details-marker { display: none; }
+.correction { margin-top: 10px; padding: 18px 20px; background: var(--card); border-left: 4px solid var(--ok); border-radius: 0 12px 12px 0; }
+.correction p { margin: 0 0 8px; }
+.correction p:last-child { margin-bottom: 0; }
+.correction .answer strong { color: var(--ok); }
+
+.app-band { background: var(--night); color: var(--on-night); overflow: hidden; }
+.app-band .wrap { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 56px; align-items: end; padding-top: 64px; }
+.app-band .text { padding-bottom: 64px; }
+.app-band p { color: var(--on-night-muted); font-size: 18px; margin: 16px 0 26px; max-width: 30em; }
+.app-band .phone { box-shadow: none; background: #1F2940; }
+.app-band .hero-phone { width: min(100%, 300px); }
+.app-band .soon { background: var(--night3); border-color: var(--night-rule); color: var(--on-night); }
+
+/* Calcul de la moyenne */
+.calc { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 40px; align-items: start; }
+.calc-rows { border-top: 2px solid var(--ink); }
+.calc-row { display: grid; grid-template-columns: auto minmax(0, 1fr) 104px; gap: 16px; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--rule); }
+.calc-row label { display: flex; flex-direction: column; line-height: 1.3; font-weight: 700; font-size: 17px; }
+.calc-row label span { color: var(--muted); font-size: 14px; font-weight: 400; }
+.calc-row input { width: 100%; min-height: 52px; font: inherit; font-stretch: 75%; font-size: 26px; font-weight: 800; text-align: center; font-variant-numeric: tabular-nums; color: var(--ink); background: var(--card); border: 1px solid var(--line-ui); border-radius: 12px; padding: 6px; }
+.calc-row input:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.calc-row input[aria-invalid="true"], .calc-row.elim input { border-color: var(--bad); box-shadow: inset 0 0 0 1px var(--bad); color: var(--bad); }
+.calc-help { font-size: 14px; color: var(--muted); margin: 12px 0 0; }
+.calc-side { position: sticky; top: 24px; }
+.result { border-radius: 18px; padding: 24px; background: var(--card); border: 2px solid var(--ink); }
+.result.ok { background: var(--ok-bg); border-color: var(--ok); }
+.result.bad { background: var(--bad-bg); border-color: var(--bad); }
+.result p { margin: 0; color: var(--ink2); }
+.result-avg { font-stretch: 75%; font-size: 72px; font-weight: 800; line-height: 1; margin: 0 0 8px !important; color: var(--ink) !important; font-variant-numeric: tabular-nums; }
+.result-avg small { font-size: 26px; color: var(--muted); font-weight: 700; }
+.result-verdict { font-weight: 800; font-stretch: 112%; font-size: 24px; line-height: 1.2; margin: 0 0 8px !important; color: var(--ink) !important; }
+.result.ok .result-verdict { color: var(--ok) !important; }
+.result.bad .result-verdict { color: var(--bad) !important; }
+.result ul { margin: 8px 0 0; padding-left: 20px; color: var(--ink2); }
+.calc-actions { display: flex; justify-content: space-between; align-items: center; gap: 12px 16px; margin-top: 16px; flex-wrap: wrap; font-size: 14px; color: var(--muted); }
+.card { background: var(--card); border: 1px solid var(--rule); border-radius: 14px; padding: 18px 20px; }
+
 /* Dates */
-table.next td:first-child { white-space:nowrap; font-weight:700; }
-table.next td a { text-decoration:none; }
-table.next td a:hover { text-decoration:underline; }
-.region h3 { font-size:18px; margin-bottom:8px; }
-.sessions { list-style:none; padding:0; margin:0 0 10px; }
-.sessions li { display:flex; flex-wrap:wrap; column-gap:12px; row-gap:2px; align-items:baseline; padding:8px 0; border-bottom:1px solid var(--border); margin:0; }
-.sessions li:last-child { border-bottom:0; }
-.sessions time { font-weight:700; min-width:205px; }
-.dl { color:var(--ok); font-size:15px; }
-.dl.closed { color:var(--muted); text-decoration:line-through; }
-.note { flex-basis:100%; color:var(--muted); font-size:13.5px; }
-.region .src { margin:0; }
-.national-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
-.national { padding-left:0; list-style:none; margin:0; }
-.national li { padding:3px 0; }
-.national li.past { color:var(--muted); text-decoration:line-through; }
+.next-table td:first-child { white-space: nowrap; font-weight: 700; color: var(--ink); }
+.next-table td a { text-decoration: none; border-bottom: 1px solid var(--rule2); }
+.next-table td a:hover { border-bottom-color: var(--ink); }
+.regions { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 48px; margin-top: 40px; }
+.region { border-top: 2px solid var(--ink); padding-top: 16px; scroll-margin-top: 16px; }
+.region h3 { font-size: 21px; font-stretch: 112%; margin-bottom: 8px; }
+.sessions { list-style: none; padding: 0; margin: 0 0 12px; }
+.sessions li { display: flex; flex-wrap: wrap; column-gap: 12px; row-gap: 2px; align-items: baseline; padding: 10px 0; border-bottom: 1px solid var(--rule); }
+.sessions time { font-weight: 700; min-width: 205px; }
+.dl { color: var(--ok); font-size: 15px; }
+.dl.closed { color: var(--muted); text-decoration: line-through; }
+.note { flex-basis: 100%; color: var(--muted); font-size: 13.5px; }
+.tag { display: inline-block; vertical-align: middle; margin-left: 6px; font-size: 12px; font-weight: 700; font-stretch: 100%; letter-spacing: 0; color: var(--ink2); border: 1px solid var(--rule2); border-radius: 999px; padding: 1px 8px; }
+.national-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 48px; }
+.national-grid h3 { font-stretch: 75%; font-size: 44px; font-weight: 800; line-height: 1; margin-bottom: 12px; }
+.national { list-style: none; padding: 0; margin: 0; border-top: 2px solid var(--ink); }
+.national li { padding: 9px 0; border-bottom: 1px solid var(--rule); }
+.national li.past { color: var(--muted); text-decoration: line-through; }
+.national-grid + .src { margin-top: 20px; }
+
 /* Pied de page */
-.foot { border-top:1px solid var(--border); max-width:800px; margin:0 auto; padding:28px 16px 40px; }
-.foot-cols { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-.foot-title { font-weight:800; font-size:14px; letter-spacing:1px; text-transform:uppercase; color:var(--muted); margin:0 0 6px; }
-.foot ul { list-style:none; padding:0; margin:0 0 16px; }
-.foot li { margin:3px 0; }
-.foot a { color:var(--soft); text-decoration:none; font-size:15px; }
-.foot a:hover { color:var(--text); text-decoration:underline; }
-@media (max-width:640px) {
-  body { font-size:16.5px; }
-  h1 { font-size:28px; }
-  h2 { font-size:21px; margin-top:36px; }
-  .lead { font-size:17.5px; }
-  .ep-grid { grid-template-columns:1fr; }
-  .facts { grid-template-columns:1fr 1fr; }
-  .cta { flex-direction:column; gap:12px; }
-  .cta-icon { width:52px; height:52px; border-radius:12px; }
-  .foot-cols { grid-template-columns:1fr; gap:0; }
-  .calc { padding:4px 14px 14px; }
-  .calc-row { grid-template-columns:auto 1fr 84px; gap:10px; }
-  .national-grid { grid-template-columns:1fr; }
-  table.next thead { display:none; }
-  table.next tr { display:block; padding:10px 0; border-bottom:1px solid var(--border); }
-  table.next td { display:block; border:0; padding:2px 0; }
-  .sessions time { min-width:0; }
+.foot { background: var(--night); color: var(--on-night-muted); padding: 60px 0 36px; font-size: 15px; }
+.foot-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 32px; }
+.foot .brand { color: var(--on-night); margin-bottom: 12px; }
+.foot-title { font-size: 14px; font-weight: 700; color: var(--on-night); margin: 0 0 4px; }
+.foot ul { list-style: none; padding: 0; margin: 0; }
+.foot li { margin: 0; line-height: 1.35; }
+.foot a { display: inline-block; padding: 12px 0; color: var(--on-night-muted); text-decoration: none; }
+.foot a.brand { display: flex; padding: 0; }
+.foot a:hover { color: var(--on-night); text-decoration: underline; }
+.foot-legal { border-top: 1px solid var(--night-rule); margin-top: 44px; padding-top: 20px; font-size: 14px; }
+.foot :focus-visible, .try-band :focus-visible, .app-band :focus-visible { outline-color: var(--yellow); }
+
+@media (max-width: 860px) {
+  .hide-sm { display: none; }
+  .show-sm { display: inline; }
+  .get { display: none; }
+  .hero .wrap, .try-band .wrap, .section-head, .split, .ep-hero .wrap, .app-band .wrap, .calc { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .hero .wrap { padding-top: 40px; gap: 8px; }
+  .hero-text { padding-bottom: 40px; }
+  .hero-phone { width: min(100%, 270px); }
+  .phone { border-radius: 40px 40px 0 0; padding: 9px 9px 0; }
+  .phone img { border-radius: 32px 32px 0 0; aspect-ratio: 660 / 820; }
+  .section { padding: 64px 0; }
+  .try-band { padding: 56px 0; }
+  .page-head .wrap { padding-bottom: 40px; }
+  .screens { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 16px; margin: 0 -24px; padding: 0 24px 8px; scrollbar-width: none; }
+  .screens li { flex: 0 0 68%; scroll-snap-align: start; }
+  .offer { grid-template-columns: minmax(0, 1fr); }
+  .ep-list, .regions, .national-grid { grid-template-columns: minmax(0, 1fr); }
+  .sheet { margin-top: 0; }
+  .calc-side { position: static; }
+  .foot-grid { grid-template-columns: 1fr 1fr; }
+  .foot-grid > :first-child { grid-column: 1 / -1; }
+  .app-band .text { padding-bottom: 8px; }
+  .app-band .hero-phone { width: min(100%, 250px); }
+  /* Tableau des épreuves en blocs */
+  .ep-table thead { display: none; }
+  .ep-table, .ep-table tbody, .ep-table tfoot { display: block; }
+  .ep-table tr { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px 10px; padding: 16px 0; border-bottom: 1px solid var(--rule); }
+  .ep-table td { display: block; padding: 0; border: 0; }
+  .ep-table td:first-child { grid-column: 1 / -1; margin-bottom: 8px; }
+  .ep-table td[data-label]::before { content: attr(data-label); display: block; font-stretch: 100%; font-weight: 400; font-size: 12.5px; color: var(--muted); }
+  .ep-table .n { font-size: 20px; }
+  .ep-table .n small { display: none; }
+  .ep-table .app-col { display: none; }
+  .bar { width: 100%; max-width: 64px; }
+  .weight { display: block; }
+  .weight .bar { margin-top: 4px; }
+  .ep-table tfoot tr { border-top: 2px solid var(--ink); border-bottom: 0; }
+  .ep-table tfoot td { border-top: 0; }
+  /* Prochaines sessions en blocs */
+  .next-table thead { display: none; }
+  .next-table, .next-table tbody, .next-table tr, .next-table td { display: block; }
+  .next-table tr { padding: 12px 0; border-bottom: 1px solid var(--rule); }
+  .next-table tr:first-child { border-top: 2px solid var(--ink); }
+  .next-table td { border: 0; padding: 2px 0; white-space: normal !important; }
 }
-@media (max-width:400px) {
-  .top { padding:12px 12px; }
-  .brand span { font-size:16px; }
-  .links a { font-size:14px; padding:0 7px; }
+@media (max-width: 640px) {
+  .wrap { padding: 0 16px; }
+  body { font-size: 16.5px; }
+  .lead { font-size: 18px; }
+  .q-text { font-size: 19px; }
+  .try { padding: 18px; border-radius: 18px; margin: 0 -4px; }
+  .screens { margin: 0 -16px; padding: 0 16px 8px; }
+  .screens li { flex-basis: 74%; }
+  .q { grid-template-columns: minmax(0, 1fr); padding: 26px 0; }
+  .q-num { font-size: 30px; margin-bottom: 10px; }
+  .doc { grid-template-columns: minmax(0, 1fr); gap: 18px; padding: 20px; }
+  .doc-page { width: 60px; height: 80px; }
+  .doc-page::before { top: 30px; }
+  .sheet dd { font-size: 32px; }
+  .sheet dl > div { padding: 14px 16px; }
+  .tools b { font-size: 21px; }
+  .offer > div { padding: 24px 20px; }
+  .brand { font-size: 16px; font-stretch: 100%; gap: 8px; }
+  .brand img { width: 30px; height: 30px; }
+  .nav a { font-size: 14px; padding: 8px 6px; }
+  .top .wrap { gap: 8px; height: 58px; }
+  .calc-row { grid-template-columns: auto minmax(0, 1fr) 84px; gap: 12px; }
+  .calc-row input { font-size: 22px; }
+  .result { padding: 20px; }
+  .result-avg { font-size: 60px; }
+  .sessions time { min-width: 0; }
+  .data-table { font-size: 15px; }
+  .data-table th, .data-table td { padding: 10px 8px; }
+  .passage { padding: 18px; }
 }
-@media (max-width:350px) { .brand span { display:none; } }
-@media (prefers-reduced-motion:no-preference) { html { scroll-behavior:smooth; } }
-.skip { position:absolute; left:-9999px; top:8px; z-index:10; background:var(--accent); color:var(--accent-text); font-weight:800; padding:10px 14px; border-radius:10px; }
-.skip:focus { left:16px; }
-@media (max-width:640px) { .hide-sm { display:none; } }
-[hidden] { display:none !important; }
-.tag { display:inline-block; vertical-align:middle; margin-left:6px; font-size:12px; font-weight:700; color:var(--muted); border:1px solid var(--border); border-radius:999px; padding:1px 8px; }
+@media (max-width: 360px) { .top .brand span { display: none; } }
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://prepavtc.fr/"},{"@type":"ListItem","position":2,"name":"Épreuve F : Développement commercial","item":"https://prepavtc.fr/qcm-developpement-commercial-vtc/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Combien de temps dure l’épreuve F de l’examen VTC ?","acceptedAnswer":{"@type":"Answer","text":"30 minutes, pour 16 questions : 12 QCM à 1 point et 4 questions à réponse courte à 2 points, soit 20 points."}},{"@type":"Question","name":"Quel est le coefficient de l’épreuve F ?","acceptedAnswer":{"@type":"Answer","text":"3, sur un total de 17 pour les 7 épreuves d’admissibilité : elle compte pour 17,6 % de la moyenne."}},{"@type":"Question","name":"Quelle est la note éliminatoire de l’épreuve F ?","acceptedAnswer":{"@type":"Answer","text":"Il faut au moins 6/20. En dessous, le candidat n’est pas admissible, même avec une moyenne générale de 10/20 ou plus (arrêté du 6 avril 2017, article 2)."}},{"@type":"Question","name":"Les candidats taxi passent-ils l’épreuve F du VTC ?","acceptedAnswer":{"@type":"Answer","text":"Non. L’épreuve F de développement commercial est propre à l’examen VTC ; l’examen taxi a sa propre épreuve F, sur le territoire et la réglementation locale (arrêté du 6 avril 2017, article 2)."}}]}</script>
@@ -191,162 +450,216 @@ table.next td a:hover { text-decoration:underline; }
 </head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
-<header class="top">
+<header class="top"><div class="wrap">
   <a class="brand" href="../"><img src="../icon.png" alt="" width="32" height="32"><span>Examen VTC</span></a>
-  <nav class="links" aria-label="Menu">
+  <nav class="nav" aria-label="Menu">
     <a href="../#epreuves">Épreuves</a>
-    <a href="../calcul-moyenne-examen-vtc/">Calcul</a>
+    <a href="../calcul-moyenne-examen-vtc/"><span class="hide-sm">Calcul de la moyenne</span><span class="show-sm">Moyenne</span></a>
     <a href="../dates-examen-vtc/">Dates</a>
   </nav>
-</header>
+  <a class="get" href="https://apps.apple.com/app/apple-store/id6820546888?pt=129054549&amp;ct=site&amp;mt=8">Télécharger l’app</a>
+</div></header>
 <main id="contenu">
-<nav class="crumbs" aria-label="Fil d'Ariane"><a href="../">Accueil</a><span aria-hidden="true">›</span><span aria-current="page">Épreuve F : Développement commercial</span></nav>
-<div style="--ep:#34D399;--ep-soft:rgba(52,211,153,.16)">
-<div class="hero">
-  <p class="kicker"><span class="ep-badge sm">F</span> Épreuve F · spécifique VTC</p>
-  <h1>QCM développement commercial : l’épreuve F de l’examen VTC</h1>
-  <p class="lead">L’épreuve F est propre à l’examen VTC : développement commercial et gestion de l’activité. 30 minutes, coefficient 3, 12 QCM et 4 questions à réponse courte.</p>
-</div>
-
-<dl class="facts">
-  <div><dt>Durée</dt><dd>30 min</dd></div>
-  <div><dt>Coefficient</dt><dd>3<small>17,6 % de la moyenne</small></dd></div>
-  <div><dt>Note minimale</dt><dd>6/20<small>en dessous : éliminatoire</small></dd></div>
-  <div><dt>Questions</dt><dd>16<small>12 QCM + 4 réponses courtes</small></dd></div>
-</dl>
-
-<aside class="pdf">
-  <svg class="pdf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M12 11v6"/><path d="m9.5 14.5 2.5 2.5 2.5-2.5"/></svg>
+<div style="--ep:#34D399">
+<section class="ep-hero"><div class="wrap">
   <div>
-    <p class="pdf-title">QCM corrigé de l’épreuve F en PDF</p>
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../">Accueil</a><span aria-hidden="true">/</span><span aria-current="page">Épreuve F</span></nav>
+    <p class="ep-label"><span class="letter">F</span>Épreuve F · spécifique à l’examen VTC</p>
+    <h1>QCM développement commercial : l’épreuve F de l’examen VTC</h1>
+    <p class="lead">L’épreuve F est propre à l’examen VTC : développement commercial et gestion de l’activité. 30 minutes, coefficient 3, 12 QCM et 4 questions à réponse courte.</p>
+    <a class="app-line" href="https://apps.apple.com/app/apple-store/id6820546888?pt=129054549&amp;ct=site&amp;mt=8"><img src="../icon.png" alt="" width="36" height="36"><span><b>Les 38 questions de l’épreuve F</b> dans l’app iPhone, dont 15 gratuites</span><span aria-hidden="true">→</span></a>
+  </div>
+  <aside class="sheet" aria-label="Fiche de l'épreuve F">
+    <div class="sheet-head">Fiche de l’épreuve<span>arrêté du 6 avril 2017</span></div>
+    <dl>
+      <div><dt>Durée</dt><dd>30 min</dd></div>
+      <div><dt>Coefficient</dt><dd>3<small>sur 17 au total</small></dd></div>
+      <div><dt>Note éliminatoire</dt><dd>&lt; 6/20<small>même avec 10 de moyenne</small></dd></div>
+      <div><dt>Questions</dt><dd>16<small>12 QCM à 1 point, 4 réponses courtes à 2 points</small></dd></div>
+    </dl>
+    <div class="weight-line">Poids dans la moyenne : <strong>17,6 %</strong><span class="bar"><i style="--w:17.6%"></i></span></div>
+  </aside>
+</div></section>
+
+<section class="section" aria-labelledby="t-pdf"><div class="wrap"><div class="doc">
+  <div class="doc-page" aria-hidden="true"><span class="letter sm">F</span></div>
+  <div>
+    <h2 id="t-pdf">QCM corrigé de l’épreuve F en PDF</h2>
     <p>12 QCM à cocher et 3 questions à réponse courte, puis leur corrigé expliqué : 5 pages A4 à imprimer. Ce ne sont pas des annales officielles, mais des questions rédigées pour l’app, au format de l’examen.</p>
-    <a class="pdf-btn" href="qcm-vtc-epreuve-f-corrige.pdf" download>Télécharger le PDF (121 Ko)</a>
+    <a class="btn btn-ink" href="qcm-vtc-epreuve-f-corrige.pdf" download>Télécharger le PDF (121 Ko)</a>
   </div>
-</aside>
+</div></div></section>
 
-<h2>Ce que couvre l’épreuve F</h2>
-<p>L’épreuve porte sur le développement commercial et la gestion propre à l’activité de VTC (arrêté du 6 avril 2017, article 2) : 12 QCM à 1 point et 4 questions à réponse courte à 2 points. Les candidats taxi passent à la place une épreuve F sur la connaissance du territoire et la réglementation locale.</p><p>Dans l’app : marketing (4P, cible, positionnement, SWOT), prospection et fidélisation, partenaires, prix et devis, note remise au client, coût de revient, marge et plateformes.</p>
-<p class="themes-title">Thèmes travaillés dans l’app :</p>
-<ul class="chips"><li>Marketing</li><li>Fidélisation</li><li>Développement commercial</li><li>Prospection</li><li>Prix</li><li>Devis</li><li>Note / facture</li><li>Coût de revient</li><li>Marge</li><li>Plateformes</li><li>Rentabilité</li><li>Clientèle</li><li>Prestations</li><li>Réputation</li><li>Indicateurs</li><li>Marché</li></ul>
+<section class="section" aria-labelledby="t-programme"><div class="wrap split">
+  <div><h2 id="t-programme">Ce que couvre l’épreuve F</h2></div>
+  <div class="prose">
+    <p>L’épreuve porte sur le développement commercial et la gestion propre à l’activité de VTC (arrêté du 6 avril 2017, article 2) : 12 QCM à 1 point et 4 questions à réponse courte à 2 points. Les candidats taxi passent à la place une épreuve F sur la connaissance du territoire et la réglementation locale.</p><p>Dans l’app : marketing (4P, cible, positionnement, SWOT), prospection et fidélisation, partenaires, prix et devis, note remise au client, coût de revient, marge et plateformes.</p>
+    <p class="themes-title">Thèmes travaillés dans l’app</p>
+    <ul class="themes"><li>Marketing</li><li>Fidélisation</li><li>Développement commercial</li><li>Prospection</li><li>Prix</li><li>Devis</li><li>Note / facture</li><li>Coût de revient</li><li>Marge</li><li>Plateformes</li><li>Rentabilité</li><li>Clientèle</li><li>Prestations</li><li>Réputation</li><li>Indicateurs</li><li>Marché</li></ul>
+  </div>
+</div></section>
 
-<h2 id="questions">5 questions corrigées de l’épreuve F</h2>
-<p>Tirées des questions gratuites de l’app. À l’examen, la consigne est de sélectionner « la ou les bonne(s) réponse(s) » (sujet officiel des CMA) : un QCM peut avoir plusieurs bonnes réponses, sans que leur nombre soit annoncé.</p>
-
-<ol class="quiz">
-<li class="q">
-  <p class="q-kicker">Question 1 · QCM · Marketing</p>
-  <p class="q-text">Que désignent les « 4P » du marketing mix ?</p>
-  <ol class="choices"><li class="ok"><span class="l">a</span>Produit, Prix, Place (distribution), Promotion (communication)</li><li><span class="l">b</span>Prospection, Publicité, Paiement, Profit</li><li><span class="l">c</span>Personnel, Planning, Prix, Partenaires</li><li><span class="l">d</span>Produit, Promotion, Patrimoine, Prestige</li></ol>
-  <details><summary>Voir la correction</summary>
-    <p class="answer">Bonne réponse : <strong>a) Produit, Prix, Place (distribution), Promotion (communication)</strong></p>
-    <p>Le marketing mix combine le produit (la prestation), le prix, la distribution (comment le client réserve) et la communication.</p>
-    
-  </details>
-</li>
-<li class="q">
-  <p class="q-kicker">Question 2 · QCM · Marketing</p>
-  <p class="q-text">Que signifie l’analyse SWOT ?</p>
-  <ol class="choices"><li class="ok"><span class="l">a</span>Forces, faiblesses, opportunités, menaces</li><li><span class="l">b</span>Ventes, achats, stocks, trésorerie</li><li><span class="l">c</span>Prix, produit, place, promotion</li><li><span class="l">d</span>Clients, fournisseurs, concurrents, État</li></ol>
-  <details><summary>Voir la correction</summary>
-    <p class="answer">Bonne réponse : <strong>a) Forces, faiblesses, opportunités, menaces</strong></p>
-    <p>Strengths, Weaknesses, Opportunities, Threats : on analyse l’interne (forces/faiblesses) et l’externe (opportunités/menaces).</p>
-    
-  </details>
-</li>
-<li class="q">
-  <p class="q-kicker">Question 3 · QCM · Prix</p>
-  <p class="q-text">Comment est déterminé le prix d’une course VTC ?</p>
-  <ol class="choices"><li class="ok"><span class="l">a</span>À l’avance, lors de la réservation, entre le client et l’exploitant</li><li><span class="l">b</span>Par un taximètre en fin de course</li><li><span class="l">c</span>Par un tarif préfectoral obligatoire</li><li><span class="l">d</span>Librement après la course, selon l’humeur du chauffeur</li></ol>
-  <details><summary>Voir la correction</summary>
-    <p class="answer">Bonne réponse : <strong>a) À l’avance, lors de la réservation, entre le client et l’exploitant</strong></p>
-    <p>La prestation VTC s’exerce dans des conditions fixées à l’avance : prix forfaitaire ou mode de calcul convenu à la réservation. Le taximètre est réservé aux taxis.</p>
-    <p class="src">Source : Code des transports, art. L. 3122-1</p>
-  </details>
-</li>
-<li class="q">
-  <p class="q-kicker">Question 4 · QCM · Note / facture</p>
-  <p class="q-text">À partir de quel montant la remise d’une note (facture) au client particulier est-elle obligatoire pour une prestation de service ?</p>
-  <ol class="choices"><li><span class="l">a</span>15 € TTC</li><li class="ok"><span class="l">b</span>25 € TTC</li><li><span class="l">c</span>50 € TTC</li><li><span class="l">d</span>100 € TTC</li></ol>
-  <details><summary>Voir la correction</summary>
-    <p class="answer">Bonne réponse : <strong>b) 25 € TTC</strong></p>
-    <p>Pour un VTC, une note doit être remise avant le paiement dès que le prix atteint 25 € TTC, sur papier ou par voie électronique. En dessous, elle est remise si le client la demande.</p>
-    <p class="src">Source : Arrêté n° 83-50/A du 3 octobre 1983 ; DGCCRF, fiche « Taxis, VTC, motos-pros »</p>
-  </details>
-</li>
-<li class="q">
-  <p class="q-kicker">Question 5 · Réponse courte · Devis</p>
-  <p class="q-text">Établissez le prix d’une course : 30 km, 45 minutes. Coût kilométrique 0,50 €/km, coût horaire 24 €/h. Vous appliquez une marge de 20 % sur le coût de revient. TVA 10 %. Donnez le coût de revient, le prix HT, la TVA et le prix TTC.</p>
-  <details><summary>Voir la réponse attendue</summary>
-    <p class="answer"><strong>Coût de revient = 30 × 0,50 + 0,75 × 24 = 15 + 18 = 33 €. Prix HT = 33 × 1,20 = 39,60 €. TVA = 39,60 × 10 % = 3,96 €. Prix TTC = 43,56 €.</strong></p>
-    <p>Attention : 45 minutes = 0,75 heure (et non 0,45).</p>
-    
-  </details>
-</li>
-</ol>
-
-<aside class="cta">
-  <img class="cta-icon" src="../icon.png" alt="" width="64" height="64">
+<section class="section" id="questions" aria-labelledby="t-questions"><div class="wrap">
+  <div class="section-head">
+    <h2 id="t-questions">5 questions corrigées de l’épreuve F</h2>
+    <p>Tirées des questions gratuites de l’app. Cochez vos réponses, puis ouvrez la correction. À l’examen, la consigne est de sélectionner « la ou les bonne(s) réponse(s) » (sujet officiel des CMA) : un QCM peut avoir plusieurs bonnes réponses, sans que leur nombre soit annoncé.</p>
+  </div>
+  
+  <ol class="quiz">
+<li class="q" data-answer="a">
+  <span class="q-num" aria-hidden="true">01</span>
   <div>
-    <p class="cta-title">Les 38 questions de l’épreuve F dans l’app</p>
-    <p class="cta-text">Dont 15 gratuites, chacune avec sa correction expliquée, et des examens blancs au format officiel : durées, barème et notes éliminatoires.</p>
-    <a class="store" href="https://apps.apple.com/app/apple-store/id6820546888?pt=129054549&amp;ct=site&amp;mt=8"><img src="../app-store-badge.svg" alt="Télécharger dans l'App Store" width="150" height="50"></a>
+    <p class="q-meta">QCM · Marketing</p>
+    <p class="q-text" id="q-F001">Que désignent les « 4P » du marketing mix ?</p>
+    <p class="q-hint">Une ou plusieurs bonnes réponses</p>
+    <div class="opts" role="group" aria-labelledby="q-F001">
+      <label class="opt"><input type="checkbox" value="a"><span class="key">a</span><span>Produit, Prix, Place (distribution), Promotion (communication)</span></label>
+      <label class="opt"><input type="checkbox" value="b"><span class="key">b</span><span>Prospection, Publicité, Paiement, Profit</span></label>
+      <label class="opt"><input type="checkbox" value="c"><span class="key">c</span><span>Personnel, Planning, Prix, Partenaires</span></label>
+      <label class="opt"><input type="checkbox" value="d"><span class="key">d</span><span>Produit, Promotion, Patrimoine, Prestige</span></label>
+    </div>
+    <details><summary>Voir la correction</summary><div class="correction">
+      <p class="answer">Bonne réponse : <strong>a) Produit, Prix, Place (distribution), Promotion (communication)</strong></p>
+      <p>Le marketing mix combine le produit (la prestation), le prix, la distribution (comment le client réserve) et la communication.</p>
+      
+    </div></details>
   </div>
-</aside>
+</li>
+<li class="q" data-answer="a">
+  <span class="q-num" aria-hidden="true">02</span>
+  <div>
+    <p class="q-meta">QCM · Marketing</p>
+    <p class="q-text" id="q-F004">Que signifie l’analyse SWOT ?</p>
+    <p class="q-hint">Une ou plusieurs bonnes réponses</p>
+    <div class="opts" role="group" aria-labelledby="q-F004">
+      <label class="opt"><input type="checkbox" value="a"><span class="key">a</span><span>Forces, faiblesses, opportunités, menaces</span></label>
+      <label class="opt"><input type="checkbox" value="b"><span class="key">b</span><span>Ventes, achats, stocks, trésorerie</span></label>
+      <label class="opt"><input type="checkbox" value="c"><span class="key">c</span><span>Prix, produit, place, promotion</span></label>
+      <label class="opt"><input type="checkbox" value="d"><span class="key">d</span><span>Clients, fournisseurs, concurrents, État</span></label>
+    </div>
+    <details><summary>Voir la correction</summary><div class="correction">
+      <p class="answer">Bonne réponse : <strong>a) Forces, faiblesses, opportunités, menaces</strong></p>
+      <p>Strengths, Weaknesses, Opportunities, Threats : on analyse l’interne (forces/faiblesses) et l’externe (opportunités/menaces).</p>
+      
+    </div></details>
+  </div>
+</li>
+<li class="q" data-answer="a">
+  <span class="q-num" aria-hidden="true">03</span>
+  <div>
+    <p class="q-meta">QCM · Prix</p>
+    <p class="q-text" id="q-F009">Comment est déterminé le prix d’une course VTC ?</p>
+    <p class="q-hint">Une ou plusieurs bonnes réponses</p>
+    <div class="opts" role="group" aria-labelledby="q-F009">
+      <label class="opt"><input type="checkbox" value="a"><span class="key">a</span><span>À l’avance, lors de la réservation, entre le client et l’exploitant</span></label>
+      <label class="opt"><input type="checkbox" value="b"><span class="key">b</span><span>Par un taximètre en fin de course</span></label>
+      <label class="opt"><input type="checkbox" value="c"><span class="key">c</span><span>Par un tarif préfectoral obligatoire</span></label>
+      <label class="opt"><input type="checkbox" value="d"><span class="key">d</span><span>Librement après la course, selon l’humeur du chauffeur</span></label>
+    </div>
+    <details><summary>Voir la correction</summary><div class="correction">
+      <p class="answer">Bonne réponse : <strong>a) À l’avance, lors de la réservation, entre le client et l’exploitant</strong></p>
+      <p>La prestation VTC s’exerce dans des conditions fixées à l’avance : prix forfaitaire ou mode de calcul convenu à la réservation. Le taximètre est réservé aux taxis.</p>
+      <p class="src">Source : Code des transports, art. L. 3122-1</p>
+    </div></details>
+  </div>
+</li>
+<li class="q" data-answer="b">
+  <span class="q-num" aria-hidden="true">04</span>
+  <div>
+    <p class="q-meta">QCM · Note / facture</p>
+    <p class="q-text" id="q-F011">À partir de quel montant la remise d’une note (facture) au client particulier est-elle obligatoire pour une prestation de service ?</p>
+    <p class="q-hint">Une ou plusieurs bonnes réponses</p>
+    <div class="opts" role="group" aria-labelledby="q-F011">
+      <label class="opt"><input type="checkbox" value="a"><span class="key">a</span><span>15 € TTC</span></label>
+      <label class="opt"><input type="checkbox" value="b"><span class="key">b</span><span>25 € TTC</span></label>
+      <label class="opt"><input type="checkbox" value="c"><span class="key">c</span><span>50 € TTC</span></label>
+      <label class="opt"><input type="checkbox" value="d"><span class="key">d</span><span>100 € TTC</span></label>
+    </div>
+    <details><summary>Voir la correction</summary><div class="correction">
+      <p class="answer">Bonne réponse : <strong>b) 25 € TTC</strong></p>
+      <p>Pour un VTC, une note doit être remise avant le paiement dès que le prix atteint 25 € TTC, sur papier ou par voie électronique. En dessous, elle est remise si le client la demande.</p>
+      <p class="src">Source : Arrêté n° 83-50/A du 3 octobre 1983 ; DGCCRF, fiche « Taxis, VTC, motos-pros »</p>
+    </div></details>
+  </div>
+</li>
+<li class="q">
+  <span class="q-num" aria-hidden="true">05</span>
+  <div>
+    <p class="q-meta">Réponse courte · Devis</p>
+    <p class="q-text" id="q-F101">Établissez le prix d’une course : 30 km, 45 minutes. Coût kilométrique 0,50 €/km, coût horaire 24 €/h. Vous appliquez une marge de 20 % sur le coût de revient. TVA 10 %. Donnez le coût de revient, le prix HT, la TVA et le prix TTC.</p>
+    <details><summary>Voir la réponse attendue</summary><div class="correction">
+      <p class="answer"><strong>Coût de revient = 30 × 0,50 + 0,75 × 24 = 15 + 18 = 33 €. Prix HT = 33 × 1,20 = 39,60 €. TVA = 39,60 × 10 % = 3,96 €. Prix TTC = 43,56 €.</strong></p>
+      <p>Attention : 45 minutes = 0,75 heure (et non 0,45).</p>
+      
+    </div></details>
+  </div>
+</li>
+  </ol>
+</div></section>
 
-<h2>Conseils pour l’épreuve F</h2>
-<ul class="tips"><li>Les 4 questions à réponse courte valent 8 points sur 20. Dans l’app, elles demandent par exemple de calculer le prix d’une course (coût de revient, marge, TVA) ou de citer des actions de fidélisation.</li><li>Le prix d’une course VTC est fixé à l’avance, à la réservation : le taximètre est réservé aux taxis.</li><li>Une note doit être remise au client avant le paiement dès 25 € TTC (arrêté n° 83-50/A du 3 octobre 1983).</li></ul>
+<section class="app-band" aria-labelledby="t-app"><div class="wrap">
+  <div class="text">
+    <h2 id="t-app">Les 38 questions de l’épreuve F dans l’app</h2>
+    <p>Dont 15 gratuites, chacune avec sa correction expliquée, et des examens blancs au format de l’examen : durées, barème et notes éliminatoires.</p>
+    <a class="badge" href="https://apps.apple.com/app/apple-store/id6820546888?pt=129054549&amp;ct=site&amp;mt=8"><img src="../app-store-badge.svg" alt="Télécharger dans l'App Store" width="156" height="52"></a>
+  </div>
+  <div class="hero-phone"><div class="phone"><img src="../img/05-epreuves.jpg" alt="Écran Réviser de l'app : les 7 épreuves avec la progression et la note estimée de chacune" width="660" height="1060" loading="lazy"></div></div>
+</div></section>
 
-<h2>Les autres épreuves</h2>
-<ul class="ep-grid">
-  <li><a class="ep-card" href="../qcm-reglementation-t3p/" style="--ep:#F5B301;--ep-soft:rgba(245,179,1,.16)">
-    <span class="ep-badge">A</span>
-    <span class="ep-body"><strong>Réglementation T3P</strong><span class="ep-meta">45 min · coef. 3 · 6/20 minimum</span></span>
-    <span class="ep-arrow" aria-hidden="true">›</span>
-  </a></li>
-  <li><a class="ep-card" href="../qcm-gestion-vtc/" style="--ep:#2DD4BF;--ep-soft:rgba(45,212,191,.16)">
-    <span class="ep-badge">B</span>
-    <span class="ep-body"><strong>Gestion</strong><span class="ep-meta">45 min · coef. 2 · 6/20 minimum</span></span>
-    <span class="ep-arrow" aria-hidden="true">›</span>
-  </a></li>
-  <li><a class="ep-card" href="../qcm-securite-routiere-vtc/" style="--ep:#FB923C;--ep-soft:rgba(251,146,60,.16)">
-    <span class="ep-badge">C</span>
-    <span class="ep-body"><strong>Sécurité routière</strong><span class="ep-meta">30 min · coef. 3 · 6/20 minimum</span></span>
-    <span class="ep-arrow" aria-hidden="true">›</span>
-  </a></li>
-  <li><a class="ep-card" href="../examen-vtc-francais/" style="--ep:#A78BFA;--ep-soft:rgba(167,139,250,.16)">
-    <span class="ep-badge">D</span>
-    <span class="ep-body"><strong>Français</strong><span class="ep-meta">30 min · coef. 2 · 6/20 minimum</span></span>
-    <span class="ep-arrow" aria-hidden="true">›</span>
-  </a></li>
-  <li><a class="ep-card" href="../examen-vtc-anglais-qcm/" style="--ep:#60A5FA;--ep-soft:rgba(96,165,250,.16)">
-    <span class="ep-badge">E</span>
-    <span class="ep-body"><strong>Anglais</strong><span class="ep-meta">30 min · coef. 1 · 4/20 minimum</span></span>
-    <span class="ep-arrow" aria-hidden="true">›</span>
-  </a></li>
-  <li><a class="ep-card" href="../qcm-reglementation-vtc/" style="--ep:#F472B6;--ep-soft:rgba(244,114,182,.16)">
-    <span class="ep-badge">G</span>
-    <span class="ep-body"><strong>Réglementation VTC</strong><span class="ep-meta">20 min · coef. 3 · 6/20 minimum</span></span>
-    <span class="ep-arrow" aria-hidden="true">›</span>
-  </a></li>
+<section class="section" aria-labelledby="t-conseils"><div class="wrap split">
+  <div><h2 id="t-conseils">Conseils pour l’épreuve F</h2></div>
+  <ol class="tips"><li>Les 4 questions à réponse courte valent 8 points sur 20. Dans l’app, elles demandent par exemple de calculer le prix d’une course (coût de revient, marge, TVA) ou de citer des actions de fidélisation.</li><li>Le prix d’une course VTC est fixé à l’avance, à la réservation : le taximètre est réservé aux taxis.</li><li>Une note doit être remise au client avant le paiement dès 25 € TTC (arrêté n° 83-50/A du 3 octobre 1983).</li></ol>
+</div></section>
+
+<section class="section" aria-labelledby="t-autres"><div class="wrap">
+  <div class="section-head">
+    <h2 id="t-autres">Les autres épreuves</h2>
+    <p>Toutes comptent ensemble : vérifiez votre moyenne avec le <a href="../calcul-moyenne-examen-vtc/">calcul de la moyenne</a> et choisissez votre session dans les <a href="../dates-examen-vtc/">dates de l’examen</a>.</p>
+  </div>
+  <ul class="ep-list">
+  <li style="--ep:#F5B301"><a href="../qcm-reglementation-t3p/"><span class="letter">A</span><span><b>Réglementation T3P</b><small>45 min · coef. 3 · 6/20 minimum</small></span><span class="arrow" aria-hidden="true">→</span></a></li>
+  <li style="--ep:#2DD4BF"><a href="../qcm-gestion-vtc/"><span class="letter">B</span><span><b>Gestion</b><small>45 min · coef. 2 · 6/20 minimum</small></span><span class="arrow" aria-hidden="true">→</span></a></li>
+  <li style="--ep:#FB923C"><a href="../qcm-securite-routiere-vtc/"><span class="letter">C</span><span><b>Sécurité routière</b><small>30 min · coef. 3 · 6/20 minimum</small></span><span class="arrow" aria-hidden="true">→</span></a></li>
+  <li style="--ep:#A78BFA"><a href="../examen-vtc-francais/"><span class="letter">D</span><span><b>Français</b><small>30 min · coef. 2 · 6/20 minimum</small></span><span class="arrow" aria-hidden="true">→</span></a></li>
+  <li style="--ep:#60A5FA"><a href="../examen-vtc-anglais-qcm/"><span class="letter">E</span><span><b>Anglais</b><small>30 min · coef. 1 · 4/20 minimum</small></span><span class="arrow" aria-hidden="true">→</span></a></li>
+  <li style="--ep:#F472B6"><a href="../qcm-reglementation-vtc/"><span class="letter">G</span><span><b>Réglementation VTC</b><small>20 min · coef. 3 · 6/20 minimum</small></span><span class="arrow" aria-hidden="true">→</span></a></li>
 </ul>
-<p>Toutes les épreuves comptent ensemble : vérifiez votre moyenne avec le <a href="../calcul-moyenne-examen-vtc/">calcul de la moyenne</a> et choisissez votre session dans les <a href="../dates-examen-vtc/">dates de l’examen</a>.</p>
+</div></section>
 </div>
-<section class="faq">
-  <h2>Questions fréquentes</h2>
-  <div class="card"><h3>Combien de temps dure l’épreuve F de l’examen VTC ?</h3><p>30 minutes, pour 16 questions : 12 QCM à 1 point et 4 questions à réponse courte à 2 points, soit 20 points.</p></div>
-  <div class="card"><h3>Quel est le coefficient de l’épreuve F ?</h3><p>3, sur un total de 17 pour les 7 épreuves d’admissibilité : elle compte pour 17,6 % de la moyenne.</p></div>
-  <div class="card"><h3>Quelle est la note éliminatoire de l’épreuve F ?</h3><p>Il faut au moins 6/20. En dessous, le candidat n’est pas admissible, même avec une moyenne générale de 10/20 ou plus (arrêté du 6 avril 2017, article 2).</p></div>
-  <div class="card"><h3>Les candidats taxi passent-ils l’épreuve F du VTC ?</h3><p>Non. L’épreuve F de développement commercial est propre à l’examen VTC ; l’examen taxi a sa propre épreuve F, sur le territoire et la réglementation locale (arrêté du 6 avril 2017, article 2).</p></div>
-</section>
-<p class="updated">Mis à jour le 14 octobre 2026</p>
-</main>
-<footer class="foot">
-  <div class="foot-cols">
-    <div><p class="foot-title">QCM par épreuve</p><ul><li><a href="../qcm-reglementation-t3p/">QCM Réglementation T3P</a></li><li><a href="../qcm-gestion-vtc/">QCM Gestion</a></li><li><a href="../qcm-securite-routiere-vtc/">QCM Sécurité routière</a></li><li><a href="../examen-vtc-francais/">QCM Français</a></li><li><a href="../examen-vtc-anglais-qcm/">QCM Anglais</a></li><li><a href="../qcm-developpement-commercial-vtc/">QCM Développement commercial</a></li><li><a href="../qcm-reglementation-vtc/">QCM Réglementation VTC</a></li></ul></div>
-    <div><p class="foot-title">Outils</p><ul><li><a href="../calcul-moyenne-examen-vtc/">Calcul de la moyenne</a></li><li><a href="../dates-examen-vtc/">Dates de l’examen</a></li></ul>
-      <p class="foot-title">L’app</p><ul><li><a href="../#aide">Aide et contact</a></li><li><a href="../confidentialite.html">Confidentialité</a></li><li><a href="../mentions-legales.html">Mentions légales</a></li></ul></div>
+<script>
+// Correction ouverte : vert pour les bonnes réponses, rouge pour une case cochée à tort (recalculé si la coche change).
+for (const q of document.querySelectorAll('.q[data-answer]')) {
+  const good = q.dataset.answer.split(',');
+  const details = q.querySelector('details');
+  const mark = () => {
+    for (const o of q.querySelectorAll('.opt')) {
+      const input = o.querySelector('input');
+      o.classList.toggle('is-ok', details.open && good.includes(input.value));
+      o.classList.toggle('is-bad', details.open && !good.includes(input.value) && input.checked);
+    }
+  };
+  details.addEventListener('toggle', mark);
+  q.addEventListener('change', mark);
+}
+</script>
+<section class="section" aria-labelledby="t-faq"><div class="wrap split">
+  <div><h2 id="t-faq">Questions fréquentes</h2><p class="updated">Mis à jour le 14 octobre 2026</p></div>
+  <div class="faq">
+    <details><summary>Combien de temps dure l’épreuve F de l’examen VTC ?</summary><p>30 minutes, pour 16 questions : 12 QCM à 1 point et 4 questions à réponse courte à 2 points, soit 20 points.</p></details>
+    <details><summary>Quel est le coefficient de l’épreuve F ?</summary><p>3, sur un total de 17 pour les 7 épreuves d’admissibilité : elle compte pour 17,6 % de la moyenne.</p></details>
+    <details><summary>Quelle est la note éliminatoire de l’épreuve F ?</summary><p>Il faut au moins 6/20. En dessous, le candidat n’est pas admissible, même avec une moyenne générale de 10/20 ou plus (arrêté du 6 avril 2017, article 2).</p></details>
+    <details><summary>Les candidats taxi passent-ils l’épreuve F du VTC ?</summary><p>Non. L’épreuve F de développement commercial est propre à l’examen VTC ; l’examen taxi a sa propre épreuve F, sur le territoire et la réglementation locale (arrêté du 6 avril 2017, article 2).</p></details>
   </div>
-  <p class="muted">Application indépendante, non affiliée aux chambres de métiers et de l’artisanat (CMA) ni à l’administration. En cas de doute, la réglementation officielle fait foi.</p>
-</footer>
+</div></section>
+</main>
+<footer class="foot"><div class="wrap">
+  <div class="foot-grid">
+    <div><a class="brand" href="../"><img src="../icon.png" alt="" width="32" height="32"><span>Examen VTC</span></a><p>Révisez l’écrit de l’examen VTC sur iPhone.</p></div>
+    <div><p class="foot-title">QCM par épreuve</p><ul><li><a href="../qcm-reglementation-t3p/">A · Réglementation T3P</a></li><li><a href="../qcm-gestion-vtc/">B · Gestion</a></li><li><a href="../qcm-securite-routiere-vtc/">C · Sécurité routière</a></li><li><a href="../examen-vtc-francais/">D · Français</a></li><li><a href="../examen-vtc-anglais-qcm/">E · Anglais</a></li><li><a href="../qcm-developpement-commercial-vtc/">F · Développement commercial</a></li><li><a href="../qcm-reglementation-vtc/">G · Réglementation VTC</a></li></ul></div>
+    <div><p class="foot-title">Outils</p><ul><li><a href="../calcul-moyenne-examen-vtc/">Calcul de la moyenne</a></li><li><a href="../dates-examen-vtc/">Dates de l’examen</a></li></ul></div>
+    <div><p class="foot-title">L’app</p><ul><li><a href="../#aide">Aide et contact</a></li><li><a href="../confidentialite.html">Confidentialité</a></li><li><a href="../mentions-legales.html">Mentions légales</a></li></ul></div>
+  </div>
+  <p class="foot-legal">Application indépendante, non affiliée aux chambres de métiers et de l’artisanat (CMA) ni à l’administration. En cas de doute, la réglementation officielle fait foi.</p>
+</div></footer>
 </body>
 </html>
