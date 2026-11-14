@@ -21,8 +21,21 @@
 <meta property="og:image" content="https://prepavtc.fr/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Examen VTC : QCM corrigés et examens blancs sur iPhone">
+<meta property="og:image:alt" content="Examen VTC : QCM corrigés et examens blancs sur iPhone et Android">
 <meta name="twitter:card" content="summary_large_image">
+<script>
+// Sur un téléphone : son store passe devant (html[data-os]) et les liens uniques vers l'app (data-ios / data-play) y mènent.
+(function () {
+  var u = navigator.userAgent;
+  var os = /Android/.test(u) ? 'android' : /iPhone|iPad|iPod/.test(u) || (/Macintosh/.test(u) && navigator.maxTouchPoints > 1) ? 'ios' : '';
+  if (!os) return;
+  document.documentElement.setAttribute('data-os', os);
+  var attr = os === 'ios' ? 'data-ios' : 'data-play';
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('a[' + attr + ']').forEach(function (a) { a.href = a.getAttribute(attr); });
+  });
+})();
+</script>
 <style>
 /* Site prepavtc.fr : clair et éditorial ; le bleu nuit et le jaune de l'app servent aux bandeaux « produit »
    (question à essayer, Pass, appel à l'app, pied de page). Police Archivo hébergée sur le site (axe de largeur :
@@ -82,6 +95,9 @@ h3 { font-size: 19px; font-stretch: 100%; letter-spacing: 0; line-height: 1.3; }
 .cta-row { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
 .badge { display: inline-block; }
 .badge img { height: 52px; width: auto; }
+.badges { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 13px; vertical-align: middle; }
+html[data-os="android"] .badge-play { order: -1; }
+.page-head .badges { margin-top: 24px; }
 .soon { display: inline-block; border: 1px solid var(--rule2); background: var(--card); color: var(--ink2); border-radius: 12px; padding: 10px 16px; font-weight: 700; font-size: 15px; }
 .cta-note { margin: 0; font-size: 15px; line-height: 1.45; color: var(--ink2); }
 .cta-note strong { color: var(--ink); }
@@ -303,6 +319,7 @@ h3 { font-size: 19px; font-stretch: 100%; letter-spacing: 0; line-height: 1.3; }
 .app-band { background: var(--night); color: var(--on-night); overflow: hidden; }
 .app-band .wrap { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 56px; align-items: end; padding-top: 64px; }
 .app-band .text { padding-bottom: 64px; }
+.app-band h2 { text-wrap: balance; }
 .app-band p { color: var(--on-night-muted); font-size: 18px; margin: 16px 0 26px; max-width: 30em; }
 .app-band .phone { box-shadow: none; background: #1F2940; }
 .app-band .hero-phone { width: min(100%, 300px); }
@@ -441,6 +458,7 @@ h3 { font-size: 19px; font-stretch: 100%; letter-spacing: 0; line-height: 1.3; }
   .data-table th, .data-table td { padding: 10px 8px; }
   .passage { padding: 18px; }
 }
+@media (max-width: 400px) { .badge img { height: 48px; } }
 @media (max-width: 360px) { .top .brand span { display: none; } }
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://prepavtc.fr/"},{"@type":"ListItem","position":2,"name":"Épreuve A : Réglementation T3P","item":"https://prepavtc.fr/qcm-reglementation-t3p/"}]}</script>
@@ -457,7 +475,7 @@ h3 { font-size: 19px; font-stretch: 100%; letter-spacing: 0; line-height: 1.3; }
     <a href="../calcul-moyenne-examen-vtc/"><span class="hide-sm">Calcul de la moyenne</span><span class="show-sm">Moyenne</span></a>
     <a href="../dates-examen-vtc/">Dates</a>
   </nav>
-  <a class="get" href="https://apps.apple.com/app/apple-store/id6820546888?pt=129054549&amp;ct=site&amp;mt=8">Télécharger l’app</a>
+  <a class="get" href="#telecharger" data-ios="https://apps.apple.com/app/apple-store/id6820546888?pt=129054549&amp;ct=site&amp;mt=8" data-play="https://play.google.com/store/apps/details?id=com.fedighalloussi.examenvtc&amp;referrer=utm_source%3Dsite%26utm_campaign%3Dsite">Télécharger l’app</a>
 </div></header>
 <main id="contenu">
 <div style="--ep:#F5B301">
@@ -467,7 +485,7 @@ h3 { font-size: 19px; font-stretch: 100%; letter-spacing: 0; line-height: 1.3; }
     <p class="ep-label"><span class="letter">A</span>Épreuve A · commune aux examens taxi et VTC</p>
     <h1>QCM réglementation T3P : l’épreuve A de l’examen VTC</h1>
     <p class="lead">L’épreuve A porte sur la réglementation du transport public particulier de personnes (taxis, VTC et deux ou trois roues motorisés) et, depuis le 1er avril 2024, sur la prévention des discriminations et des violences sexuelles et sexistes.</p>
-    <a class="app-line" href="https://apps.apple.com/app/apple-store/id6820546888?pt=129054549&amp;ct=site&amp;mt=8"><img src="../icon.png" alt="" width="36" height="36"><span><b>Les 103 questions de l’épreuve A</b> dans l’app iPhone, dont 15 gratuites</span><span aria-hidden="true">→</span></a>
+    <a class="app-line" href="#telecharger" data-ios="https://apps.apple.com/app/apple-store/id6820546888?pt=129054549&amp;ct=site&amp;mt=8" data-play="https://play.google.com/store/apps/details?id=com.fedighalloussi.examenvtc&amp;referrer=utm_source%3Dsite%26utm_campaign%3Dsite"><img src="../icon.png" alt="" width="36" height="36"><span><b>Les 103 questions de l’épreuve A</b> dans l’app iPhone et Android, dont 15 gratuites</span><span aria-hidden="true">→</span></a>
   </div>
   <aside class="sheet" aria-label="Fiche de l'épreuve A">
     <div class="sheet-head">Fiche de l’épreuve<span>arrêté du 6 avril 2017</span></div>
@@ -597,11 +615,11 @@ h3 { font-size: 19px; font-stretch: 100%; letter-spacing: 0; line-height: 1.3; }
   </ol>
 </div></section>
 
-<section class="app-band" aria-labelledby="t-app"><div class="wrap">
+<section class="app-band" id="telecharger" aria-labelledby="t-app"><div class="wrap">
   <div class="text">
     <h2 id="t-app">Les 103 questions de l’épreuve A dans l’app</h2>
     <p>Dont 15 gratuites, chacune avec sa correction expliquée et sa source officielle, et des examens blancs au format de l’examen : durées, barème et notes éliminatoires.</p>
-    <a class="badge" href="https://apps.apple.com/app/apple-store/id6820546888?pt=129054549&amp;ct=site&amp;mt=8"><img src="../app-store-badge.svg" alt="Télécharger dans l'App Store" width="156" height="52"></a>
+    <span class="badges"><a class="badge" href="https://apps.apple.com/app/apple-store/id6820546888?pt=129054549&amp;ct=site&amp;mt=8"><img src="../app-store-badge.svg" alt="Télécharger dans l'App Store" width="164" height="52"></a><a class="badge badge-play" href="https://play.google.com/store/apps/details?id=com.fedighalloussi.examenvtc&amp;referrer=utm_source%3Dsite%26utm_campaign%3Dsite"><img src="../google-play-badge.svg" alt="Disponible sur Google Play" width="175" height="52"></a></span>
   </div>
   <div class="hero-phone"><div class="phone"><img src="../img/03-examen.jpg" alt="Examen blanc de l'épreuve A dans l'app, chronomètre à 44:58" width="660" height="1060" loading="lazy"></div></div>
 </div></section>
@@ -654,7 +672,7 @@ for (const q of document.querySelectorAll('.q[data-answer]')) {
 </main>
 <footer class="foot"><div class="wrap">
   <div class="foot-grid">
-    <div><a class="brand" href="../"><img src="../icon.png" alt="" width="32" height="32"><span>Examen VTC</span></a><p>Révisez l’écrit de l’examen VTC sur iPhone.</p></div>
+    <div><a class="brand" href="../"><img src="../icon.png" alt="" width="32" height="32"><span>Examen VTC</span></a><p>Révisez l’écrit de l’examen VTC sur iPhone et Android.</p></div>
     <div><p class="foot-title">QCM par épreuve</p><ul><li><a href="../qcm-reglementation-t3p/">A · Réglementation T3P</a></li><li><a href="../qcm-gestion-vtc/">B · Gestion</a></li><li><a href="../qcm-securite-routiere-vtc/">C · Sécurité routière</a></li><li><a href="../examen-vtc-francais/">D · Français</a></li><li><a href="../examen-vtc-anglais-qcm/">E · Anglais</a></li><li><a href="../qcm-developpement-commercial-vtc/">F · Développement commercial</a></li><li><a href="../qcm-reglementation-vtc/">G · Réglementation VTC</a></li></ul></div>
     <div><p class="foot-title">Outils</p><ul><li><a href="../calcul-moyenne-examen-vtc/">Calcul de la moyenne</a></li><li><a href="../dates-examen-vtc/">Dates de l’examen</a></li></ul></div>
     <div><p class="foot-title">L’app</p><ul><li><a href="../#aide">Aide et contact</a></li><li><a href="../confidentialite.html">Confidentialité</a></li><li><a href="../mentions-legales.html">Mentions légales</a></li></ul></div>
